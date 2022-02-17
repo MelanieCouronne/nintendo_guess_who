@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_213328) do
+ActiveRecord::Schema.define(version: 2022_02_17_213746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(version: 2022_02_17_213328) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "computer_character_id", null: false
+    t.bigint "user_character_id", null: false
+    t.index ["computer_character_id"], name: "index_games_on_computer_character_id"
+    t.index ["user_character_id"], name: "index_games_on_user_character_id"
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
@@ -124,6 +128,8 @@ ActiveRecord::Schema.define(version: 2022_02_17_213328) do
   add_foreign_key "character_profiles", "characteristics"
   add_foreign_key "character_profiles", "characters"
   add_foreign_key "computer_characters", "characters"
+  add_foreign_key "games", "computer_characters"
+  add_foreign_key "games", "user_characters"
   add_foreign_key "games", "users"
   add_foreign_key "questions", "characteristics"
   add_foreign_key "rounds", "games"
