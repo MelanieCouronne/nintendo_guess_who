@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_215411) do
+ActiveRecord::Schema.define(version: 2022_02_17_215503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,11 @@ ActiveRecord::Schema.define(version: 2022_02_17_215411) do
     t.bigint "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_question_id", null: false
+    t.bigint "computer_question_id", null: false
+    t.index ["computer_question_id"], name: "index_rounds_on_computer_question_id"
     t.index ["game_id"], name: "index_rounds_on_game_id"
+    t.index ["user_question_id"], name: "index_rounds_on_user_question_id"
   end
 
   create_table "user_characters", force: :cascade do |t|
@@ -147,7 +151,9 @@ ActiveRecord::Schema.define(version: 2022_02_17_215411) do
   add_foreign_key "games", "user_characters"
   add_foreign_key "games", "users"
   add_foreign_key "questions", "characteristics"
+  add_foreign_key "rounds", "computer_questions"
   add_foreign_key "rounds", "games"
+  add_foreign_key "rounds", "user_questions"
   add_foreign_key "user_characters", "characters"
   add_foreign_key "user_questions", "questions"
 end
