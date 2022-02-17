@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_212935) do
+ActiveRecord::Schema.define(version: 2022_02_17_213328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 2022_02_17_212935) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "computer_characters", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.integer "computer_characteristics", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_computer_characters_on_character_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.integer "score", default: 0
     t.integer "round_count", default: 0
@@ -115,6 +123,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_212935) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "character_profiles", "characteristics"
   add_foreign_key "character_profiles", "characters"
+  add_foreign_key "computer_characters", "characters"
   add_foreign_key "games", "users"
   add_foreign_key "questions", "characteristics"
   add_foreign_key "rounds", "games"
