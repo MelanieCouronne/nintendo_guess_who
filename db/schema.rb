@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_211007) do
+ActiveRecord::Schema.define(version: 2022_02_17_212935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,14 @@ ActiveRecord::Schema.define(version: 2022_02_17_211007) do
     t.index ["game_id"], name: "index_rounds_on_game_id"
   end
 
+  create_table "user_characters", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.integer "user_characteristics", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_user_characters_on_character_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -110,4 +118,5 @@ ActiveRecord::Schema.define(version: 2022_02_17_211007) do
   add_foreign_key "games", "users"
   add_foreign_key "questions", "characteristics"
   add_foreign_key "rounds", "games"
+  add_foreign_key "user_characters", "characters"
 end
