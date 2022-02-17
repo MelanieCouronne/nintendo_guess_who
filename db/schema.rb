@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_170816) do
+ActiveRecord::Schema.define(version: 2022_02_17_205357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2022_02_17_170816) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "character_profiles", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.bigint "characteristic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_character_profiles_on_character_id"
+    t.index ["characteristic_id"], name: "index_character_profiles_on_characteristic_id"
   end
 
   create_table "characteristics", force: :cascade do |t|
@@ -78,5 +87,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_170816) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "character_profiles", "characteristics"
+  add_foreign_key "character_profiles", "characters"
   add_foreign_key "questions", "characteristics"
 end
