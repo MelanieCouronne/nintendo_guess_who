@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_165509) do
+ActiveRecord::Schema.define(version: 2022_02_17_215503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,92 @@ ActiveRecord::Schema.define(version: 2022_02_17_165509) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "character_profiles", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.bigint "characteristic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_character_profiles_on_character_id"
+    t.index ["characteristic_id"], name: "index_character_profiles_on_characteristic_id"
+  end
+
+  create_table "characteristics", force: :cascade do |t|
+    t.string "Characteristic_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "character_name"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "computer_characters", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.integer "computer_characteristics", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_computer_characters_on_character_id"
+  end
+
+  create_table "computer_questions", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_computer_questions_on_question_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer "score", default: 0
+    t.integer "round_count", default: 0
+    t.integer "rejected_characters", default: [], array: true
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "computer_character_id", null: false
+    t.bigint "user_character_id", null: false
+    t.index ["computer_character_id"], name: "index_games_on_computer_character_id"
+    t.index ["user_character_id"], name: "index_games_on_user_character_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.bigint "characteristic_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["characteristic_id"], name: "index_questions_on_characteristic_id"
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer "level", default: 0
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_question_id", null: false
+    t.bigint "computer_question_id", null: false
+    t.index ["computer_question_id"], name: "index_rounds_on_computer_question_id"
+    t.index ["game_id"], name: "index_rounds_on_game_id"
+    t.index ["user_question_id"], name: "index_rounds_on_user_question_id"
+  end
+
+  create_table "user_characters", force: :cascade do |t|
+    t.bigint "character_id", null: false
+    t.integer "user_characteristics", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_user_characters_on_character_id"
+  end
+
+  create_table "user_questions", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_user_questions_on_question_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,4 +143,17 @@ ActiveRecord::Schema.define(version: 2022_02_17_165509) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "character_profiles", "characteristics"
+  add_foreign_key "character_profiles", "characters"
+  add_foreign_key "computer_characters", "characters"
+  add_foreign_key "computer_questions", "questions"
+  add_foreign_key "games", "computer_characters"
+  add_foreign_key "games", "user_characters"
+  add_foreign_key "games", "users"
+  add_foreign_key "questions", "characteristics"
+  add_foreign_key "rounds", "computer_questions"
+  add_foreign_key "rounds", "games"
+  add_foreign_key "rounds", "user_questions"
+  add_foreign_key "user_characters", "characters"
+  add_foreign_key "user_questions", "questions"
 end
