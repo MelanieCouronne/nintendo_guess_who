@@ -4,5 +4,5 @@ class Question < ApplicationRecord
   has_many :user_questions
   has_many :computer_questions
 
-  validates :characteristic_id, :question, presence: true
+  validates :characteristic_id, :title, presence: true
 end

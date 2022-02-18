@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_02_17_215503) do
   end
 
   create_table "characteristics", force: :cascade do |t|
-    t.string "Characteristic_name"
+    t.string "characteristic_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
