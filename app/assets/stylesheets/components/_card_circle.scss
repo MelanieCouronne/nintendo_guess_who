@@ -44,3 +44,18 @@
     font-size: 50px;
   }
 }
+
+.border-sticky {
+  border: $red-guesswho 3.5px solid;
+
+ /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    border: $red-guesswho 6px solid;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    border: $red-guesswho 6px solid;
+  }
+
+}

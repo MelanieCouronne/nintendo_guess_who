@@ -14,4 +14,14 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "controllers"
-import "bootstrap"
+
+// External imports
+import "bootstrap";
+
+// Internal imports, e.g:
+import { selectedCharacter } from '../plugins/selected_character';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  selectedCharacter();
+});
