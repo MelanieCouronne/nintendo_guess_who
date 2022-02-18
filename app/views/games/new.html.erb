@@ -1,0 +1,23 @@
+<div class="wrapper-background">
+  <div class="container">
+
+    <h1>Choose your character!</h1>
+    <%= form_for (@game) do |f| %>
+      <div class="parent-game options">
+        <input type="hidden" name="game[id]" value="" />
+        <% @characters.each do |character| %>
+          <div class="text-center">
+
+            <label for="game_id_<%= character.id %>">
+              <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
+              <%= image_tag(character.image_url, class: "card-circle") %>
+            </label>
+
+            <p><%= character.character_name  %></p>
+          </div>
+        <% end %>
+      </div>
+      <input type="submit" class='btn btn-danger mb-5' name="commit" value="Let's play!" data-disable-with="Create Game" />
+    <% end %>
+  </div>
+</div>
