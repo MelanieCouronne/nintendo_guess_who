@@ -13,11 +13,12 @@ puts "\u{1F331}"
 
 #--------------<><><> user - admin <><><>--------------
 admin = [
-  { email: "melanie@gmail.com", password: "azerty", username: "Mélanie-admin"}, #id=1
+  { email: "melanie@gmail.com", password: "test-azerty"}, #id=1
 ]
 
 puts' '
-print '~~~ Creating 1 user admin '
+print "\u{1F6A7}"
+print ' ~~~ Creating 1 user admin '
 puts "\u{1F510}"
 User.create!(admin)
 puts '... ... ...'
@@ -59,8 +60,9 @@ characters = [
 ]
 
 puts' '
-print '~~~ Creating 24 characters '
-puts "\u{1F6A7}"
+print "\u{1F6A7}"
+print ' ~~~ Creating 24 characters '
+puts "\u{1F9D9}"
 Character.create!(characters)
 puts '... ... ...'
 print "\u{2728} "
@@ -134,8 +136,9 @@ characteristics = [
 ]
 
 puts' '
-print '~~~ Creating 49 characteristics '
-puts "\u{1F6A7}"
+print "\u{1F6A7}"
+print ' ~~~ Creating 49 characteristics '
+puts "\u{1F441}"
 Characteristic.create!(characteristics)
 puts '... ... ...'
 print "\u{2728} "
@@ -177,8 +180,9 @@ character_profiles = [
 ]
 
 puts' '
-print '~~~ Creating 347 character profiles '
-puts "\u{1F6A7}"
+print "\u{1F6A7}"
+print ' ~~~ Creating 347 character profiles '
+puts "\u{1F4AC}"
 character_profiles.each do |character_profile|
   id = character_profile[:character_id]
   character_profile[:characteristic_id].each do |characteristic|
@@ -193,76 +197,77 @@ puts "Created #{CharacterProfile.count} character profiles"
 #--------------<><><> questions <><><>--------------
 
 questions = [
-  { question: "Is the character female?", characteristic_id: 1}, #id=1
-  { question: "Is the character male?", characteristic_id: 2}, #id=2
-  { question: "Is the character an animal?", characteristic_id: 3}, #id=3
-  { question: "Is the character undefined?", characteristic_id: 4}, #id=4
+  { title: "Is the character female?", characteristic_id: 1}, #id=1
+  { title: "Is the character male?", characteristic_id: 2}, #id=2
+  { title: "Is the character an animal?", characteristic_id: 3}, #id=3
+  { title: "Is the character human?", characteristic_id: 4}, #id=4
 
-  { question: "Does the character have brown eyes?", characteristic_id: 5}, #id=5
-  { question: "Does the character have black eyes?", characteristic_id: 6}, #id=6
-  { question: "Does the character have blue eyes?", characteristic_id: 7}, #id=7
-  { question: "Does the character have green eyes?", characteristic_id: 8}, #id=8
+  { title: "Does the character have brown eyes?", characteristic_id: 5}, #id=5
+  { title: "Does the character have black eyes?", characteristic_id: 6}, #id=6
+  { title: "Does the character have blue eyes?", characteristic_id: 7}, #id=7
+  { title: "Does the character have green eyes?", characteristic_id: 8}, #id=8
 
-  { question: "Does the character have red eyes?", characteristic_id: 9}, #id=9
-  { question: "Does the character have hair?", characteristic_id: 10}, #id=10
-  { question: "Does the character have no hair?", characteristic_id: 11}, #id=11
-  { question: "Does the character have brown hair?", characteristic_id: 12}, #id=12
+  { title: "Does the character have red eyes?", characteristic_id: 9}, #id=9
+  { title: "Does the character have hair?", characteristic_id: 10}, #id=10
+  { title: "Does the character have no hair?", characteristic_id: 11}, #id=11
+  { title: "Does the character have brown hair?", characteristic_id: 12}, #id=12
 
-  { question: "Does the character have blue hair?", characteristic_id: 13}, #id=13
-  { question: "Does the character have red hair?", characteristic_id: 14}, #id=14
-  { question: "Does the character have blonde hair?", characteristic_id: 15}, #id=15
-  { question: "Does the character have grey hair?", characteristic_id: 16}, #id=16
+  { title: "Does the character have blue hair?", characteristic_id: 13}, #id=13
+  { title: "Does the character have red hair?", characteristic_id: 14}, #id=14
+  { title: "Does the character have blonde hair?", characteristic_id: 15}, #id=15
+  { title: "Does the character have grey hair?", characteristic_id: 16}, #id=16
 
-  { question: "Does the character have fur?", characteristic_id: 17}, #id=17
-  { question: "Does the character have no fur?", characteristic_id: 18}, #id=18
-  { question: "Does the character have blue fur?", characteristic_id: 19}, #id=19
-  { question: "Does the character have brown fur?", characteristic_id: 20}, #id=20
+  { title: "Does the character have fur?", characteristic_id: 17}, #id=17
+  { title: "Does the character have no fur?", characteristic_id: 18}, #id=18
+  { title: "Does the character have blue fur?", characteristic_id: 19}, #id=19
+  { title: "Does the character have brown fur?", characteristic_id: 20}, #id=20
 
-  { question: "Does the character have hazel fur?", characteristic_id: 21}, #id=21
-  { question: "Does the character have green fur?", characteristic_id: 22}, #id=22
-  { question: "Does the character have white skin?", characteristic_id: 23}, #id=23
-  { question: "Does the character have yellow skin?", characteristic_id: 24}, #id=24
+  { title: "Does the character have hazel fur?", characteristic_id: 21}, #id=21
+  { title: "Does the character have green fur?", characteristic_id: 22}, #id=22
+  { title: "Does the character have white skin?", characteristic_id: 23}, #id=23
+  { title: "Does the character have yellow skin?", characteristic_id: 24}, #id=24
 
-  { question: "Does the character have brown skin?", characteristic_id: 25}, #id=25
-  { question: "Does the character wear glasses?", characteristic_id: 26}, #id=26
-  { question: "Does the character wear no glasses?", characteristic_id: 27}, #id=27
-  { question: "Does the character wear a hat?", characteristic_id: 28}, #id=28
+  { title: "Does the character have brown skin?", characteristic_id: 25}, #id=25
+  { title: "Does the character wear glasses?", characteristic_id: 26}, #id=26
+  { title: "Does the character wear no glasses?", characteristic_id: 27}, #id=27
+  { title: "Does the character wear a hat?", characteristic_id: 28}, #id=28
 
-  { question: "Does the character wear no hat?", characteristic_id: 29}, #id=29
-  { question: "Does the character have a beard?", characteristic_id: 30}, #id=30
-  { question: "Does the character have no beard?", characteristic_id: 31}, #id=31
-  { question: "Does the character have long eyebrows?", characteristic_id: 32}, #id=32
+  { title: "Does the character wear no hat?", characteristic_id: 29}, #id=29
+  { title: "Does the character have a beard?", characteristic_id: 30}, #id=30
+  { title: "Does the character have no beard?", characteristic_id: 31}, #id=31
+  { title: "Does the character have long eyebrows?", characteristic_id: 32}, #id=32
 
-  { question: "Does the character have small eyebrows?", characteristic_id: 33}, #id=33
-  { question: "Does the character have no eyebrows?", characteristic_id: 34}, #id=34
-  { question: "Does the character have a mustache?", characteristic_id: 35}, #id=35
-  { question: "Does the character have no mustache?", characteristic_id: 36}, #id=36
+  { title: "Does the character have small eyebrows?", characteristic_id: 33}, #id=33
+  { title: "Does the character have no eyebrows?", characteristic_id: 34}, #id=34
+  { title: "Does the character have a mustache?", characteristic_id: 35}, #id=35
+  { title: "Does the character have no mustache?", characteristic_id: 36}, #id=36
 
-  { question: "Does the character have a shell?", characteristic_id: 37}, #id=37
-  { question: "Does the character have no shell?", characteristic_id: 38}, #id=38
-  { question: "Does the character have big ears?", characteristic_id: 39}, #id=39
-  { question: "Does the character have small ears?", characteristic_id: 40}, #id=40
+  { title: "Does the character have a shell?", characteristic_id: 37}, #id=37
+  { title: "Does the character have no shell?", characteristic_id: 38}, #id=38
+  { title: "Does the character have big ears?", characteristic_id: 39}, #id=39
+  { title: "Does the character have small ears?", characteristic_id: 40}, #id=40
 
-  { question: "Does the character have no ears?", characteristic_id: 41}, #id=41
-  { question: "Does the character have a beak?", characteristic_id: 42}, #id=42
-  { question: "Does the character have a long nose?", characteristic_id: 43}, #id=43
-  { question: "Does the character have a big nose?", characteristic_id: 44}, #id=44
+  { title: "Does the character have no ears?", characteristic_id: 41}, #id=41
+  { title: "Does the character have a beak?", characteristic_id: 42}, #id=42
+  { title: "Does the character have a long nose?", characteristic_id: 43}, #id=43
+  { title: "Does the character have a big nose?", characteristic_id: 44}, #id=44
 
-  { question: "Does the character have a small nose?", characteristic_id: 45}, #id=45
-  { question: "Does the character have no nose nor beak?", characteristic_id: 46}, #id=46
-  { question: "Does the character have big teeth?", characteristic_id: 47}, #id=47
-  { question: "Does the character have no teeth?", characteristic_id: 48}, #id=48
+  { title: "Does the character have a small nose?", characteristic_id: 45}, #id=45
+  { title: "Does the character have no nose nor beak?", characteristic_id: 46}, #id=46
+  { title: "Does the character have big teeth?", characteristic_id: 47}, #id=47
+  { title: "Does the character have no teeth?", characteristic_id: 48}, #id=48
 
-  { question: "Does the character have no skin?", characteristic_id: 49} #id=49
-  #{ question: "Is the character a plumber?", characteristic_id: },
-  #{ question: "Is the character a vilant?", characteristic_id: },
-  #{ question: "Is the character a spaceman?", characteristic_id: },
-  #{ question: "Is the character a princess?", characteristic_id: }
+  { title: "Does the character have no skin?", characteristic_id: 49} #id=49
+  #{ title: "Is the character a plumber?", characteristic_id: },
+  #{ title: "Is the character a vilant?", characteristic_id: },
+  #{ title: "Is the character a spaceman?", characteristic_id: },
+  #{ title: "Is the character a princess?", characteristic_id: }
 ]
 
 puts' '
-print '~~~ Creating 49 questions '
-puts "\u{1F6A7}"
+print "\u{1F6A7}"
+print ' ~~~ Creating 49 questions '
+puts "\u{2753}"
 Question.create!(questions)
 puts '... ... ...'
 print "\u{2728} "
