@@ -1,7 +1,7 @@
 
 .card-circle {
-  width: 200px;
-  height: 200px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
@@ -12,6 +12,19 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     margin-bottom: 5px;
   }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    width: 150px;
+    height: 150px;
+  }
+
 }
 
 .card-circle-back {
