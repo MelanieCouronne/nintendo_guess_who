@@ -11,3 +11,34 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// General CSS refactorisations
+
+.wrapper-background {
+  background-image: asset-url('ellipsis-1s-1084px.png');
+  background-size: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container {
+  padding-top: 100px !important;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Lobster Two', cursive;
+  font-size: 68px;
+  color: rgb(50, 50, 50);
+  margin: 32px 0;
+  opacity: 1;
+}
+
+h2 {
+  margin: 32px 0;
+  color: rgb(50, 50, 50);
+  opacity: 1;
+}
