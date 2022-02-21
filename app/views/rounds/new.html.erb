@@ -46,11 +46,11 @@
           <% end %>
 
           <div class="card-product">
-            <i class="fa-solid fa-question"></i>
+            <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
             <div class="card-product-infos">
               <h2>Previous question/answer</h2>
               <% if @game.rounds.any? %>
-                <p>Question: <%= @game.rounds.last.user_question.question.question %></p>
+                <p>Question: <%= @game.rounds.last.user_question.question.title %></p>
                 <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
                   <p>Answer: this is true!</p>
                 <% else %>
@@ -65,7 +65,7 @@
         </div>
       </div>
       <div id="computer-dashboard" class="ms-5">
-        <h2 class="text-center p-4 mb-3">Computer dashboard</h2>
+        <h2 class="text-center p-4 mb-3">Computer's dashboard</h2>
         <div id="computer-cards" class="parent-round-computer">
         <% @characters.each do |character| %>
           <div class="text-center">
@@ -77,12 +77,11 @@
         <div class="text-center p-3">
           <h4>Computer's question</h4>
           <div class="card-product">
-            <i class="fa-solid fa-question"></i>
             <div class="card-product-infos">
               <h2>Previous question/answer</h2>
               <% if @game.rounds.any? %>
-                <p>Question: <%= @game.rounds.last.user_question.question.question %></p>
-                <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
+                <p>Question: <%= @game.rounds.last.computer_question.question.title %></p>
+                <% if @game.user_character.user_characteristics.include?(@game.rounds.last.computer_question.question.id) %>
                   <p>Answer: this is true!</p>
                 <% else %>
                   <p>Answer: sorry that's false!</p>
@@ -90,11 +89,9 @@
               <% else %>
                 <p>No question yet!</p>
               <% end %>
-
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
