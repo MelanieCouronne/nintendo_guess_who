@@ -1,10 +1,27 @@
 /* Small devices (landscape phones, 576px and up) */
+#computer-dashboard {
+  display: none;
+  height: 1080px;
+  margin: 0 auto 60px 60px;
+  background-color: rgba(211, 211, 211, .4);
+  border-radius: 6px;
+  padding: 0 23px;
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      display: block;
+      flex-direction: column;
+    }
+}
+
 .row {
-  justify-content: space-around;
+  display: flex;
+  flex-direction: inline;
+  justify-content: space-between;
 }
 
 .wrapper-parent{
-  margin: 125px;
+  margin: 125px auto;
 }
 
 .parent-game {
@@ -26,17 +43,45 @@
     /* Large devices (desktops, 992px and up) */
     @media (min-width: 992px) {
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(4, 1fr);
       grid-column-gap: 15px;
       grid-row-gap: 15px;
     }
 }
 
 .parent-round {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-grid-template-rows: repeat(4, 1fr);
-grid-column-gap: 20px;
-grid-row-gap: 50px;
-margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 50px;
+  margin: 0 auto 60px auto;
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 50px;
+      margin-bottom: 60px;
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 50px;
+      margin-bottom: 60px;
+    }
+
+}
+
+.parent-round-computer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0 auto 40px auto;
 }

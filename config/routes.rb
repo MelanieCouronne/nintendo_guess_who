@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'games#new' #'pages#home'
 
-  resources :games, only: [:new, :create, :show], shallow: true do
+  resources :games, only: [:new, :create, :show] do
     resources :rounds, only: [:new, :create]
   end
 

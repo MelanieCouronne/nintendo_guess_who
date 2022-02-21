@@ -71,7 +71,7 @@ class RoundsController < ApplicationController
 
 
     if @round.save
-      @game.round_sum += 1
+      @game.round_count += 1
       @game.save
 
       #* Then redirect to new round, passing last references

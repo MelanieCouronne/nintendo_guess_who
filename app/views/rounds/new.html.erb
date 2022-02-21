@@ -1,0 +1,98 @@
+<div class="wrapper-background">
+  <div class="wrapper-parent">
+    <% if @game.round_count == 0 %>
+      <h1 class="text-center p-3">New round!</h1>
+    <% else %>
+      <h1 class="text-center p-3">Round #<%= @game.round_count + 1 %></h1>
+    <% end %>
+    <div class="d-flex">
+      <div id="player-dashboard">
+        <h2 class="text-center p-4 mb-3">Your dashboard</h2>
+        <div id="player-cards" class="parent-round">
+          <% @characters.each do |character| %>
+            <div class="box">
+              <% if @game.rejected_characters.include?(character.id) %>
+                <div class="text-center">
+                  <div class="box-inner">
+                    <div class="box-back">
+                      <div class="card-circle-back">
+                        <i class="fa-regular fa-block-question"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p><%= character.character_name  %></p>
+                </div>
+              <% else %>
+                <div class="text-center">
+                  <div class="">
+                    <div class="">
+                      <%= image_tag(character.image_url, class: "card-circle__small", value: character.id, name: character.character_name, id: character.id) %>
+                    </div>
+                  </div>
+                  <p><%= character.character_name  %></p>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="text-center p-3">
+          <h4>Your question</h4>
+          <%= simple_form_for([@game, @round]) do |f| %>
+            <div class="">
+              <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' } }, class: 'card-question', label_method: :title, include_blank: false %>
+            </div>
+            <%= f.button :submit, label: "My turn!", class: 'btn btn-danger mb-5'%>
+            <button class='d-none btn btn-danger mb-5'>Guess Who!</button>
+          <% end %>
+
+          <div class="card-product">
+            <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
+            <div class="card-product-infos">
+              <h2>Previous question/answer</h2>
+              <% if @game.rounds.any? %>
+                <p>Question: <%= @game.rounds.last.user_question.question.title %></p>
+                <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
+                  <p>Answer: this is true!</p>
+                <% else %>
+                  <p>Answer: sorry that's false!</p>
+                <% end %>
+              <% else %>
+                <p>No question yet!</p>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="computer-dashboard" class="ms-5">
+        <h2 class="text-center p-4 mb-3">Computer's dashboard</h2>
+        <div id="computer-cards" class="parent-round-computer">
+        <% @characters.each do |character| %>
+          <div class="text-center">
+            <%= image_tag(character.image_url, class: "card-circle__computer", value: character.id, name: character.character_name, id: character.id) %>
+            <p><%= character.character_name  %></p>
+          </div>
+        <% end %>
+        </div>
+        <div class="text-center p-3">
+          <h4>Computer's question</h4>
+          <div class="card-product">
+            <div class="card-product-infos">
+              <h2>Previous question/answer</h2>
+              <% if @game.rounds.any? %>
+                <p>Question: <%= @game.rounds.last.computer_question.question.title %></p>
+                <% if @game.user_character.user_characteristics.include?(@game.rounds.last.computer_question.question.id) %>
+                  <p>Answer: this is true!</p>
+                <% else %>
+                  <p>Answer: sorry that's false!</p>
+                <% end %>
+              <% else %>
+                <p>No question yet!</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
