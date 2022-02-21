@@ -5,8 +5,8 @@
     <% else %>
       <h1 class="text-center p-3">Round #<%= @game.round_count + 1 %></h1>
     <% end %>
-    <div class="row">
-      <div id="player-dashboard" class="col-sm-12-md-5 my-1">
+    <div class="d-flex">
+      <div id="player-dashboard">
         <h2 class="text-center p-4 mb-3">Your dashboard</h2>
         <div id="player-cards" class="parent-round">
           <% @characters.each do |character| %>
@@ -64,21 +64,37 @@
           </div>
         </div>
       </div>
-      <%# <div class="col-sm-0-md-0"><div class="m-4 p-4"></div></div> %>
-      <div id="computer-dashboard" class="col-sm-12-md-5 my-1">
-        <h2 class="text-center p-4 mb-3">Your dashboard</h2>
-        <div id="computer-cards" class="parent-round">
+      <div id="computer-dashboard" class="ms-5">
+        <h2 class="text-center p-4 mb-3">Computer dashboard</h2>
+        <div id="computer-cards" class="parent-round-computer">
         <% @characters.each do |character| %>
           <div class="text-center">
-            <%= image_tag(character.image_url, class: "card-circle__small", value: character.id, name: character.character_name, id: character.id) %>
+            <%= image_tag(character.image_url, class: "card-circle__computer", value: character.id, name: character.character_name, id: character.id) %>
             <p><%= character.character_name  %></p>
           </div>
         <% end %>
         </div>
         <div class="text-center p-3">
           <h4>Computer's question</h4>
-          <h5></h5>
+          <div class="card-product">
+            <i class="fa-solid fa-question"></i>
+            <div class="card-product-infos">
+              <h2>Previous question/answer</h2>
+              <% if @game.rounds.any? %>
+                <p>Question: <%= @game.rounds.last.user_question.question.question %></p>
+                <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
+                  <p>Answer: this is true!</p>
+                <% else %>
+                  <p>Answer: sorry that's false!</p>
+                <% end %>
+              <% else %>
+                <p>No question yet!</p>
+              <% end %>
+
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
