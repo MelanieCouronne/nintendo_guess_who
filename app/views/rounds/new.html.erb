@@ -6,7 +6,7 @@
       <h1 class="text-center p-3">Round #<%= @game.round_count + 1 %></h1>
     <% end %>
     <div class="row">
-      <div class="col-sm-12-md-5 my-1">
+      <div id="player-dashboard" class="col-sm-12-md-5 my-1">
         <h2 class="text-center p-4 mb-3">Your dashboard</h2>
         <div id="player-cards" class="parent-round">
           <% @characters.each do |character| %>
@@ -64,8 +64,8 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-0-md-0"><div class="m-4 p-4"></div></div>
-      <div class="col-sm-12-md-5 my-1">
+      <%# <div class="col-sm-0-md-0"><div class="m-4 p-4"></div></div> %>
+      <div id="computer-dashboard" class="col-sm-12-md-5 my-1">
         <h2 class="text-center p-4 mb-3">Your dashboard</h2>
         <div id="computer-cards" class="parent-round">
         <% @characters.each do |character| %>

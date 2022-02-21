@@ -1,4 +1,14 @@
 /* Small devices (landscape phones, 576px and up) */
+#computer-dashboard {
+  display: none;
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      display: flex;
+    }
+}
+
+
 .row {
   justify-content: space-around;
 }
