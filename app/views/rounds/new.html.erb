@@ -11,7 +11,7 @@
         <div id="player-cards" class="parent-round">
           <% @characters.each do |character| %>
             <div class="box">
-              <% if @game.rejected_characters.include?(character.id) %>
+              <% if @game.user_rejected_characters.include?(character.id) %>
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
@@ -35,14 +35,14 @@
             </div>
           <% end %>
         </div>
-        <div class="text-center p-3">
+        <div class="text-center p-3" data-controller="display-btn">
           <h4>Your question</h4>
           <%= simple_form_for([@game, @round]) do |f| %>
             <div class="">
               <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' } }, class: 'card-question', label_method: :title, include_blank: false %>
             </div>
             <%= f.button :submit, label: "My turn!", class: 'btn btn-danger mb-5'%>
-            <button class='d-none btn btn-danger mb-5'>Guess Who!</button>
+            <button class='d-none btn btn-danger mb-5' data-display-btn-target="button">Guess Who!</button>
           <% end %>
 
           <div class="card-product">
