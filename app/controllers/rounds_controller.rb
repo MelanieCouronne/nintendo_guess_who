@@ -52,11 +52,11 @@ class RoundsController < ApplicationController
     end
 
     rejected_characters.flatten.each do |character|
-      if @game.rejected_characters.exclude?(character.id)
-        @game.rejected_characters << character.id
+      if @game.user_rejected_characters.exclude?(character.id)
+        @game.user_rejected_characters << character.id
       end
     end
-    puts "######## 2 - Characters rejetés => #{@game.rejected_characters.sort}"
+    puts "######## 2 - Characters rejetés => #{@game.user_rejected_characters.sort}"
 
 
     #* Handle question/answer for computer
@@ -67,6 +67,33 @@ class RoundsController < ApplicationController
     #* Handle characteristics selection
     @computer_question_characteristic = Question.find(@computer_question_id)
     characteristic_id = @computer_question_characteristic.characteristic_id
+
+    #* => if the character include the characteristic id of the question
+    #*   => add the characteristic in a variable
+    selected_characters = []
+
+    CharacterProfile.all.each do |cp|
+      selected_characters << cp.character_id if cp.characteristic_id == characteristic_id
+    end
+
+    computer_rejected_characters = []
+    if @game.user_character.user_characteristics.include?(characteristic_id)
+      computer_rejected_characters << @characters.reject do |character|
+        selected_characters.include?(character.id)
+      end
+    else
+      computer_rejected_characters << @characters.select do |character|
+        selected_characters.include?(character.id)
+      end
+    end
+
+    computer_rejected_characters.flatten.each do |character|
+      if @game.computer_rejected_characters.exclude?(character.id)
+        @game.computer_rejected_characters << character.id
+      end
+    end
+    puts "######## 3 - Characters rejetés => #{@game.computer_rejected_characters.sort}"
+
 
     if @round.save
       @game.round_count += 1
