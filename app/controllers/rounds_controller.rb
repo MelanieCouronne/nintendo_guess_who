@@ -36,7 +36,6 @@ class RoundsController < ApplicationController
     #*   => add the characteristic in a variable
     selected_characters = []
 
-
     CharacterProfile.all.each do |cp|
       selected_characters << cp.character_id if cp.characteristic_id == characteristic_id
     end
@@ -69,7 +68,6 @@ class RoundsController < ApplicationController
     @computer_question_characteristic = Question.find(@computer_question_id)
     characteristic_id = @computer_question_characteristic.characteristic_id
 
-
     if @round.save
       @game.round_count += 1
       @game.save
@@ -94,7 +92,7 @@ class RoundsController < ApplicationController
   end
 
   def round_params
-    params.require(:round).permit(:question_id, :game_id)
+    params.require(:round).permit(:user_question)
   end
 
 end
