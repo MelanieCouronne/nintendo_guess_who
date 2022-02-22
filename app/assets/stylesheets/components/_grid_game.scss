@@ -1,8 +1,8 @@
 /* Small devices (landscape phones, 576px and up) */
 #computer-dashboard {
   display: none;
-  height: 1080px;
-  margin: 0 auto 60px 60px;
+  height: 1130px;
+  margin: 0 auto 0 60px;
   background-color: rgba(211, 211, 211, .4);
   border-radius: 6px;
   padding: 0 23px;
@@ -82,6 +82,6 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-row-gap: 60px;
   margin: 0 auto 40px auto;
 }
