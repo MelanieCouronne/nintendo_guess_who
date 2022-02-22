@@ -11,7 +11,7 @@
         <div id="player-cards" class="parent-round">
           <% @characters.each do |character| %>
             <div class="box">
-              <% if @game.rejected_characters.include?(character.id) %>
+              <% if @game.user_rejected_characters.include?(character.id) %>
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
@@ -39,7 +39,7 @@
           <h4>Your question</h4>
           <%= simple_form_for([@game, @round]) do |f| %>
             <div class="">
-              <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' } }, class: 'card-question', label_method: :title, include_blank: false %>
+              <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' }, class: 'card-question' }, label_method: :title, include_blank: false %>
             </div>
             <%= f.button :submit, label: "My turn!", class: 'btn btn-danger mb-5'%>
             <button class='d-none btn btn-danger mb-5'>Guess Who!</button>
@@ -67,15 +67,35 @@
       <div id="computer-dashboard" class="ms-5">
         <h2 class="text-center p-4 mb-3">Computer's dashboard</h2>
         <div id="computer-cards" class="parent-round-computer">
-        <% @characters.each do |character| %>
-          <div class="text-center">
-            <%= image_tag(character.image_url, class: "card-circle__computer", value: character.id, name: character.character_name, id: character.id) %>
-            <p><%= character.character_name  %></p>
-          </div>
-        <% end %>
+          <% @characters.each do |character| %>
+            <div class="box-computer">
+              <% if @game.computer_rejected_characters.include?(character.id) %>
+                <div class="text-center">
+                  <div class="box-inner">
+                    <div class="box-back">
+                      <div class="card-circle-back-computer">
+                        <i class="fa-regular fa-block-question"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p><%= character.character_name  %></p>
+                </div>
+              <% else %>
+                <div class="text-center">
+                  <div class="">
+                    <div class="">
+                      <%= image_tag(character.image_url, class: "card-circle__computer", value: character.id, name: character.character_name, id: character.id) %>
+                    </div>
+                  </div>
+                  <p><%= character.character_name  %></p>
+                </div>
+              <% end %>
+            </div>
+
+          <% end %>
         </div>
         <div class="text-center p-3">
-          <h4>Computer's question</h4>
+          <h4 class="mt-4">Computer's question</h4>
           <div class="card-product">
             <div class="card-product-infos">
               <h2>Previous question/answer</h2>
