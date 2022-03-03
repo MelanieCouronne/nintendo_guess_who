@@ -102,6 +102,9 @@ class RoundsController < ApplicationController
       #* Then redirect to new round, passing last references
       redirect_to new_game_round_path(@game)
 
+    elsif params[:character_id] == @game.user_character_id
+      redirect_to game_path(@game)
+
     else
       if @round.errors.any?
         @round.errors.full_messages.each do |message|
@@ -114,12 +117,16 @@ class RoundsController < ApplicationController
 
   private
 
+  def end_game
+    redirect_to 'game/show' if params[:character_id] == @game.user_character_id
+  end
+
   def set_game
     @game = Game.find(params[:game_id])
   end
 
   def round_params
-    params.require(:round).permit(:user_question)
+    params.require(:round).permit(:user_question, :character_id)
   end
 
 end
