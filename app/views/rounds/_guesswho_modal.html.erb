@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <%= form_for([@game, @round]) do |f| %>
-            <div class="options d-flex">
+            <div class="options d-flex justify-content-around">
               <input type="hidden" name="game[id]" value="" />
               <% @characters.each do |character| %>
                 <% if !@game.user_rejected_characters.include?(character.id) %>
