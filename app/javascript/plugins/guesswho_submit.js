@@ -1,16 +1,16 @@
 const guesswhoSubmit = () => {
 
   // Variable
-  const btnGuesswho = document.querySelectorAll('#guesswho');
-  console.log("trigger 1");
+  const btnGuesswho = document.querySelector('#guesswho');
+  console.log(btnGuesswho);
 
-  // Validate form on click
+  // Validates form on click
   if (btnGuesswho) {
     // Onclick we submit the ID
-    btnTrigger.addEventListener("click", (event) => {
-      const inputValue = document.querySelector('input[name="flexRadioDefault"]:checked').value;
+    btnGuesswho.addEventListener("click", (event) => {
+      const inputValue = document.querySelector('input[name="flexRadioDefault"]:checked').id;
       console.log(inputValue);
-      inputValue.submit();
+      // inputValue.submit();
       console.log("submit!!!");
     });
   }
