@@ -129,7 +129,7 @@ characteristics = [
 
   { characteristic_name: 'Small Nose'}, #id = 45
   { characteristic_name: 'No Nose nor Beak'}, #id = 46
-  { characteristic_name: 'Big Teeth'}, #id = 47
+  { characteristic_name: 'Teeth'}, #id = 47
   { characteristic_name: 'No Teeth'}, #id = 48
 
   { characteristic_name: 'No Skin'} #id = 49
@@ -148,35 +148,35 @@ puts "Created #{Characteristic.count} characteristics"
 #--------------<><><> character_profiles <><><>--------------
 
 character_profiles = [
-    {character_id: 1, characteristic_id: [1, 4, 6, 10, 15, 18, 23, 27, 29, 31, 33, 36, 38, 39, 45, 48]}, #Zelda: female, black eyes, hair, blonde hair, no fur, white skin, no glasses, no hat, no beard, small eyebrows, no mustache, no shell, big ears, small nose, no teeth
-    {character_id: 2, characteristic_id: [2, 4, 6, 10, 15, 18, 23, 27, 28, 31, 32, 36, 38, 39, 45, 48]}, #Link: male, black eyes, hair, blonde hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, no mustache, no shell, big ears, small nose, no teeth
-    {character_id: 3, characteristic_id: [2, 4, 6, 11, 18, 23, 27, 28, 30, 32, 36, 38, 39, 44, 47]}, #Tingle: male, black eyes, no hair, no fur, white skin, no glasses, wears hat, beard, long eyebrows, no mustache, no shell, big ears, big nose, big teeth
-    {character_id: 4, characteristic_id: [2, 4, 9, 10, 14, 18, 25, 27, 28, 30, 32, 36, 38, 39, 44, 47]}, #Ganondorf: male, red eyes, hair, red hair, no fur, brown skin, no glasses, wears hat, beard, long eyebrows, no mustache, no shell, big ears, big nose, big teeth
+    {character_id: 1, characteristic_id: [1, 4, 6, 10, 15, 18, 23, 27, 29, 31, 33, 36, 38, 39, 45, 48]}, #Zelda: female, human, black eyes, hair, blonde hair, no fur, white skin, no glasses, no hat, no beard, small eyebrows, no mustache, no shell, big ears, small nose, no teeth
+    {character_id: 2, characteristic_id: [2, 4, 6, 10, 15, 18, 23, 27, 28, 31, 32, 36, 38, 39, 45, 48]}, #Link: male, human, black eyes, hair, blonde hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, no mustache, no shell, big ears, small nose, no teeth
+    {character_id: 3, characteristic_id: [2, 4, 6, 11, 18, 23, 27, 28, 30, 32, 36, 38, 39, 44, 47]}, #Tingle: male, human, black eyes, no hair, no fur, white skin, no glasses, wears hat, beard, long eyebrows, no mustache, no shell, big ears, big nose, big teeth
+    {character_id: 4, characteristic_id: [2, 4, 9, 10, 14, 18, 25, 27, 28, 30, 32, 36, 38, 39, 44, 47]}, #Ganondorf: male, human, red eyes, hair, red hair, no fur, brown skin, no glasses, wears hat, beard, long eyebrows, no mustache, no shell, big ears, big nose, big teeth
 
-    {character_id: 5, characteristic_id: [1, 3, 7, 10, 16, 20, 27, 29, 31, 34, 36, 38, 39, 44, 48]}, #Epona: animal, blue eyes, hair, grey hair, brown fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, big nose, no teeth
-    {character_id: 6, characteristic_id: [2, 3, 7, 11, 18, 22, 27, 28, 31, 34, 36, 38, 41, 45, 48]}, #Slippy: animal, blue eyes, no hair, no fur, green skin, no glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, small nose, no teeth
-    {character_id: 7, characteristic_id: [2, 3, 9, 11, 17, 20, 27, 29, 31, 34, 36, 38, 39, 45, 47]}, #Peppy: animal, red eyes, no hair, fur, brown fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, small nose, big teeth
-    {character_id: 8, characteristic_id: [2, 3, 8, 11, 17, 21, 27, 29, 31, 34, 35, 38, 39, 45, 48]}, #Fox: animal, green eyes, no hair, fur, hazel fur, no glasses, no hat, no beard, no eyebrows, mustache, no shell, big ears, small nose, no teeth
+    {character_id: 5, characteristic_id: [1, 3, 7, 10, 16, 20, 27, 29, 31, 34, 36, 38, 39, 44, 48]}, #Epona: female, animal, blue eyes, hair, grey hair, brown fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, big nose, no teeth
+    {character_id: 6, characteristic_id: [2, 3, 7, 11, 18, 22, 27, 28, 31, 34, 36, 38, 41, 45, 48]}, #Slippy: male, animal, blue eyes, no hair, no fur, green skin, no glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, small nose, no teeth
+    {character_id: 7, characteristic_id: [2, 3, 9, 11, 17, 20, 27, 29, 31, 34, 36, 38, 39, 45, 47]}, #Peppy: male, animal, red eyes, no hair, fur, brown fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, small nose, big teeth
+    {character_id: 8, characteristic_id: [2, 3, 8, 11, 17, 21, 27, 29, 31, 34, 35, 38, 39, 45, 48]}, #Fox: male, animal, green eyes, no hair, fur, hazel fur, no glasses, no hat, no beard, no eyebrows, mustache, no shell, big ears, small nose, no teeth
 
-    {character_id: 9, characteristic_id: [2, 3, 8, 11, 17, 19, 27, 29, 31, 34, 36, 38, 41, 42, 48]}, #Falco: animal, green eyes, no hair, fur, blue fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, no ears, beak, no teeth
-    {character_id: 10, characteristic_id: [2, 3, 7, 11, 18, 22, 27, 29, 31, 34, 36, 37, 41, 44, 48]}, #Yoshi: animal, blue eyes, no hair, no fur, green skin, no glasses, no hat, no beard, no eyebrows, no mustache, shell, no ears, big nose, no teeth
-    {character_id: 11, characteristic_id: [2, 4, 6, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 47]}, #Wario: male, black eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, big teeth
-    {character_id: 12, characteristic_id: [2, 4, 6, 11, 18, 23, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Toad: male, black eyes, no hair, no fur, white skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
+    {character_id: 9, characteristic_id: [2, 3, 8, 11, 17, 19, 27, 29, 31, 34, 36, 38, 41, 42, 48]}, #Falco: male, animal, green eyes, no hair, fur, blue fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, no ears, beak, no teeth
+    {character_id: 10, characteristic_id: [2, 3, 7, 11, 18, 22, 27, 29, 31, 34, 36, 37, 41, 44, 48]}, #Yoshi: male, animal, blue eyes, no hair, no fur, green skin, no glasses, no hat, no beard, no eyebrows, no mustache, shell, no ears, big nose, no teeth
+    {character_id: 11, characteristic_id: [2, 4, 6, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 47]}, #Wario: male, human, black eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, big teeth
+    {character_id: 12, characteristic_id: [2, 4, 6, 11, 18, 23, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Toad: male, human, black eyes, no hair, no fur, white skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
 
-    {character_id: 13, characteristic_id: [2, 4, 6, 11, 18, 49, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Shyguy: undefined, black eyes, no hair, no fur, no skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
-    {character_id: 14, characteristic_id: [1, 4, 7, 10, 15, 18, 23, 27, 29, 31, 33, 36, 38, 40, 45, 48]}, #Peach Princess: female, blue eyes, hair, blonde hair, no fur, white skin, no glasses, no hat, no beard, small eyebrows, no mustache, no shell, small ears, small nose, no teeth
-    {character_id: 15, characteristic_id: [2, 4, 7, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 48]}, #Mario: male, blue eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, no teeth
-    {character_id: 16, characteristic_id: [2, 4, 7, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 48]}, #Luigi: male, blue eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, no teeth
+    {character_id: 13, characteristic_id: [2, 4, 6, 11, 18, 49, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Shyguy: male, human, black eyes, no hair, no fur, no skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
+    {character_id: 14, characteristic_id: [1, 4, 7, 10, 15, 18, 23, 27, 29, 31, 33, 36, 38, 40, 45, 48]}, #Peach Princess: female, human, blue eyes, hair, blonde hair, no fur, white skin, no glasses, no hat, no beard, small eyebrows, no mustache, no shell, small ears, small nose, no teeth
+    {character_id: 15, characteristic_id: [2, 4, 7, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 48]}, #Mario: male, human, blue eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, no teeth
+    {character_id: 16, characteristic_id: [2, 4, 7, 10, 12, 18, 23, 27, 28, 31, 32, 35, 38, 39, 44, 48]}, #Luigi: male, human, blue eyes, hair, brown hair, no fur, white skin, no glasses, wears hat, no beard, long eyebrows, mustache, no shell, big ears, big nose, no teeth
 
-    {character_id: 17, characteristic_id: [2, 3, 6, 11, 18, 24, 27, 29, 31, 34, 36, 37, 41, 42, 48]}, #Koopa: animal, black eyes, no hair, no fur, yellow skin, no glasses, no hat, no beard, no eyebrows, no mustache, shell, no ears, beak, no teeth
-    {character_id: 18, characteristic_id: [2, 3, 6, 11, 18, 24, 26, 28, 31, 34, 36, 38, 41, 42, 47]}, #Kamek: animal, black eyes, no hair, no fur, yellow skin, wears glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, beak, big teeth
-    {character_id: 19, characteristic_id: [2, 4, 6, 11, 18, 25, 27, 29, 31, 32, 36, 38, 41, 46, 47]}, #Goomba: undefined, black eyes, no hair, no fur, brown skin, no glasses, no hat, no beard, long eyebrows, no mustache, no shell, no ears, no nose, big teeth
-    {character_id: 20, characteristic_id: [2, 3, 9, 10, 14, 18, 24, 27, 29, 31, 32, 36, 37, 41, 44, 48]}, #Bowser: animal, red eyes, hair, red hair, no fur, yellow skin, no glasses, no hat, no beard, long eyebrows, no mustache, shell, no ears, big nose, big teeth
+    {character_id: 17, characteristic_id: [2, 3, 6, 11, 18, 24, 27, 29, 31, 34, 36, 37, 41, 42, 48]}, #Koopa: male, animal, black eyes, no hair, no fur, yellow skin, no glasses, no hat, no beard, no eyebrows, no mustache, shell, no ears, beak, no teeth
+    {character_id: 18, characteristic_id: [2, 3, 6, 11, 18, 24, 26, 28, 31, 34, 36, 38, 41, 42, 47]}, #Kamek: male, animal, black eyes, no hair, no fur, yellow skin, wears glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, beak, big teeth
+    {character_id: 19, characteristic_id: [2, 3, 6, 11, 18, 25, 27, 29, 31, 32, 36, 38, 41, 46, 47]}, #Goomba: male, animal, black eyes, no hair, no fur, brown skin, no glasses, no hat, no beard, long eyebrows, no mustache, no shell, no ears, no nose, big teeth
+    {character_id: 20, characteristic_id: [2, 3, 9, 10, 14, 18, 24, 27, 29, 31, 32, 36, 37, 41, 44, 48]}, #Bowser: male, animal, red eyes, hair, red hair, no fur, yellow skin, no glasses, no hat, no beard, long eyebrows, no mustache, shell, no ears, big nose, big teeth
 
-    {character_id: 21, characteristic_id: [2, 3, 5, 11, 17, 21, 20, 27, 29, 31, 34, 36, 38, 39, 45, 48]}, #Donkey Kong: animal, brown eyes, no hair, fur, hazel fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, small nose, no teeth
-    {character_id: 22, characteristic_id: [2, 4, 9, 11, 18, 23, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Cappy: undefined, red eyes, no hair, no fur, white skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
-    {character_id: 23, characteristic_id: [2, 4, 7, 10, 15, 18, 25, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Tethu: male, blue eyes, hair, blonde hair, no fur, brown skin, no glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
-    {character_id: 24, characteristic_id: [1, 4, 7, 10, 13, 18, 23, 27, 29, 31, 32, 36, 38, 39, 46, 48]} #Esna: female, blue eyes, hair, blue hair, no fur, white skin, no glasses, no hat, no beard, long eyebrows, no mustache, no shell, big ears, no nose, no teeth
+    {character_id: 21, characteristic_id: [2, 3, 5, 11, 17, 21, 20, 27, 29, 31, 34, 36, 38, 39, 45, 48]}, #Donkey Kong: male, animal, brown eyes, no hair, fur, hazel fur, no glasses, no hat, no beard, no eyebrows, no mustache, no shell, big ears, small nose, no teeth
+    {character_id: 22, characteristic_id: [2, 3, 9, 11, 18, 23, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Cappy: male, animal, red eyes, no hair, no fur, white skin, no glasses, hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
+    {character_id: 23, characteristic_id: [2, 4, 7, 10, 15, 18, 25, 27, 28, 31, 34, 36, 38, 41, 46, 48]}, #Tethu: male, human, blue eyes, hair, blonde hair, no fur, brown skin, no glasses, wears hat, no beard, no eyebrows, no mustache, no shell, no ears, no nose, no teeth
+    {character_id: 24, characteristic_id: [1, 4, 7, 10, 13, 18, 23, 27, 29, 31, 32, 36, 38, 39, 46, 48]} #Esna: female, human, blue eyes, hair, blue hair, no fur, white skin, no glasses, no hat, no beard, long eyebrows, no mustache, no shell, big ears, no nose, no teeth
 ]
 
 puts' '
@@ -254,7 +254,7 @@ questions = [
 
   { title: "Does the character have a small nose?", characteristic_id: 45}, #id=45
   { title: "Does the character have no nose nor beak?", characteristic_id: 46}, #id=46
-  { title: "Does the character have big teeth?", characteristic_id: 47}, #id=47
+  { title: "Does the character have teeth?", characteristic_id: 47}, #id=47
   { title: "Does the character have no teeth?", characteristic_id: 48}, #id=48
 
   { title: "Does the character have no skin?", characteristic_id: 49} #id=49

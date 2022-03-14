@@ -1,0 +1,32 @@
+
+<div class="modal fade" id="guesswhoModal" tabindex="-1" aria-labelledby="guesswhoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="guesswhoModalLabel">Your guess is:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action=<%= game_path(@game) %> method="get" accept-charset="UTF-8" >
+        <div class="modal-body parent-game options">
+            <input type="hidden" name="character[id]" value="" />
+            <% @characters.each do |character| %>
+              <% if !@game.user_rejected_characters.include?(character.id) %>
+                <div class="text-center">
+
+                  <label class="" for="character_id_<%= character.id %>">
+                    <input type="radio" name="character[id]" value=<%= character.id %> id="character_id_<%= character.id %>">
+                    <%= image_tag(character.image_url, class: "card-circle__verysmall") %>
+                  </label>
+
+                  <%= character.character_name  %>
+                </div>
+              <% end %>
+            <% end %>
+        </div>
+        <div class="modal-footer">
+          <input name="commit" id="guesswho" type="submit" class="btn btn-primary" value="Guess who" data-disable-with="Guess who" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
