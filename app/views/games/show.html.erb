@@ -1,2 +1,16 @@
-<h1>Games#show</h1>
-<p>You winnnnnnnnn!</p>
+<div class="wrapper-background">
+  <div class="container">
+    <% if @current_status == true %>
+      <div class="p-5">
+        <h1>You win!</h1>
+        <img src="https://media.giphy.com/media/THZ247xvSDJmqiXSWe/giphy.gif" class="card-circle-xl" frameBorder="0" allowFullScreen alt="">
+      </div>
+      <div>
+    <% else %>
+      <div class="p-5">
+        <h1>You lost!</h1>
+        <img src="https://media.giphy.com/media/SIPIe590rx6iA/giphy.gif" class="card-circle-xl" frameBorder="0" allowFullScreen alt="">
+      </div>
+    <% end %>
+  </div>
+</div>

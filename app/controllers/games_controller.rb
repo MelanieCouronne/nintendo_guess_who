@@ -24,6 +24,7 @@ class GamesController < ApplicationController
     @user_character.user_characteristics = UserCharacter.setup_characteristics(@user_character_id)
     @user_character.save
     puts "################ 1 - User characteristics => #{@user_character.user_characteristics}"
+    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character.id}"
 
     # Handle the computer character's choice
     @computer_character_id = rand(1..24)
@@ -34,6 +35,8 @@ class GamesController < ApplicationController
     @computer_character.computer_characteristics = ComputerCharacter.setup_characteristics(@computer_character_id)
     @computer_character.save
     puts "################ 2 - Computer characteristics => #{@computer_character.computer_characteristics}"
+    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character.id}"
+
 
     # Save
     if @game.save # if save => create the first round and redirect
@@ -54,9 +57,29 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character.id}"
+    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character.id}"
+    @current_status = winner?
+    puts @current_status
+    level_up
+    @game.save
   end
 
   private
+
+  def winner?
+    if @game.computer_rejected_characters.length == 23
+      false
+    elsif params[:character][:id].to_i == @game.computer_character.character.id
+      true
+    else
+      false
+    end
+  end
+
+  def level_up
+    @game.score += 1 if @current_status == "winner"
+  end
 
   def game_params
     params.require(:game).permit(:id)

@@ -40,29 +40,39 @@ class RoundsController < ApplicationController
       selected_characters << cp.character_id if cp.characteristic_id == characteristic_id
     end
 
-    rejected_characters = []
+    user_rejected_characters = []
     if @game.computer_character.computer_characteristics.include?(characteristic_id)
-      rejected_characters << @characters.reject do |character|
+      user_rejected_characters << @characters.reject do |character|
         selected_characters.include?(character.id)
       end
     else
-      rejected_characters << @characters.select do |character|
+      user_rejected_characters << @characters.select do |character|
         selected_characters.include?(character.id)
       end
     end
 
-    rejected_characters.flatten.each do |character|
+    user_rejected_characters.flatten.each do |character|
       if @game.user_rejected_characters.exclude?(character.id)
         @game.user_rejected_characters << character.id
       end
     end
-    puts "######## 2 - Characters rejetés => #{@game.user_rejected_characters.sort}"
+    puts "######## 1 - User characters rejetés => #{@game.user_rejected_characters.sort}"
+    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character.id}"
 
 
     #* Handle question/answer for computer
-    @computer_question_id = ComputerQuestion.set_up_question
+    if @game.round_count == 0
+      @computer_question_id = ComputerQuestion.first_question
+    elsif @game.round_count == 1
+      @computer_question_id = ComputerQuestion.second_question
+    else
+      @computer_question_id = ComputerQuestion.set_up_question
+    end
     @computer_question = ComputerQuestion.create!(question_id: @computer_question_id)
     @round.computer_question_id = @computer_question.id
+    puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
+    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character.id}"
+
 
     #* Handle characteristics selection
     @computer_question_characteristic = Question.find(@computer_question_id)
@@ -92,19 +102,20 @@ class RoundsController < ApplicationController
         @game.computer_rejected_characters << character.id
       end
     end
-    puts "######## 3 - Characters rejetés => #{@game.computer_rejected_characters.sort}"
-
+    puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
 
     if @round.save
       @game.round_count += 1
       @game.save
-
-      #* Then redirect to new round, passing last references
-      redirect_to new_game_round_path(@game)
-
-    elsif params[:character_id] == @game.user_character_id
-      redirect_to game_path(@game)
-
+      puts "######## 1 - User characters rejetés => #{@game.user_rejected_characters.sort}"
+      puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
+      if end_game?
+        redirect_to(game_path(@game))
+      else
+        redirect_to(new_game_round_path(@game))
+      end
+      puts "######## 3 - #{!params[:character_id].blank?}"
+      puts "######## 3 - #{@game.computer_rejected_characters.length}"
     else
       if @round.errors.any?
         @round.errors.full_messages.each do |message|
@@ -117,9 +128,13 @@ class RoundsController < ApplicationController
 
   private
 
-  def end_game
-    redirect_to 'game/show' if params[:character_id] == @game.user_character_id
+  def end_game?
+    true if !params[:character_id].blank? || @game.computer_rejected_characters.length >= 23
   end
+
+  # def rejected_characters
+
+  # end
 
   def set_game
     @game = Game.find(params[:game_id])

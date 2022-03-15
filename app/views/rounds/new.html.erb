@@ -36,7 +36,7 @@
           <% end %>
         </div>
         <span class='d-none btn btn-danger mt-4 ms-5 mb-5' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess Who!</span>
-        <%= render 'guesswho_modal' %>
+        <%= render 'modal' %>
         <div id="question-form" class="text-center p-3" data-controller="display-btn">
           <h4>Your question</h4>
           <%= simple_form_for([@game, @round]) do |f| %>
