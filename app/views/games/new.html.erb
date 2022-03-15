@@ -10,10 +10,10 @@
 
             <label for="game_id_<%= character.id %>">
               <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
-              <%= image_tag(character.image_url, class: "card-rounded") %>
+              <%= image_tag(character.image_url, class: "card-rounded card-border-red-pulse") %>
             </label>
 
-            <p><%= character.character_name  %></p>
+            <p class="pt-1"><%= character.character_name  %></p>
           </div>
         <% end %>
       </div>

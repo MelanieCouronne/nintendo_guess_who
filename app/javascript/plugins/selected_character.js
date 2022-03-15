@@ -9,17 +9,17 @@ const selectedCharacter = (item) => {
       triggerBtn.addEventListener("click", (event) => {
 
         // Variable if an other character is selected
-        const borderStickys = document.querySelectorAll('.border-sticky');
+        const borderStickys = document.querySelectorAll('.card-border-red');
 
         // Remove border on the other selected character
         if (borderStickys) {
           borderStickys.forEach((borderSticky) => {
-            borderSticky.classList.remove('border-sticky');
+            borderSticky.classList.remove('card-border-red');
           });
         }
 
       // Add border on the selected character
-      triggerBtn.classList.add('border-sticky')
+      triggerBtn.classList.add('card-border-red')
 
       });
     });

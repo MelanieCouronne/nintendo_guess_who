@@ -1,0 +1,13 @@
+.card-border-red {
+  border: $red-guesswho 3px solid;
+
+ /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    border: $red-guesswho 6px solid;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    border: $red-guesswho 6px solid;
+  }
+}
