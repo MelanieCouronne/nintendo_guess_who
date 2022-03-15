@@ -3,17 +3,22 @@
 
     <h1>Choose your character!</h1>
     <%= form_for (@game) do |f| %>
-      <div class="parent-game options">
+      <div class="parent-game options rectangle-red-xxl">
         <input type="hidden" name="game[id]" value="" />
         <% @characters.each do |character| %>
-          <div class="text-center">
+          <div class="">
 
-            <label for="game_id_<%= character.id %>">
-              <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
-              <%= image_tag(character.image_url, class: "card-rounded card-border-red-pulse") %>
-            </label>
+            <div class="position-relative-for-cards">
+              <label for="game_id_<%= character.id %>">
+                <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
+                <%= image_tag(character.image_url, class: "card-rounded") %>
+              </label>
+              <div class="slot-white"></div>
+              <%# <div class="card-title-white"> %>
+                <%#=<p class=""><%#= character.character_name  %><%#=</p>
+              <%# </div> %>
+            </div>
 
-            <p class="pt-1"><%= character.character_name  %></p>
           </div>
         <% end %>
       </div>
