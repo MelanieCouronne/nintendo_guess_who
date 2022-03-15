@@ -15,7 +15,7 @@
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
-                      <div class="card-circle-back">
+                      <div class="card-rounded-back">
                         <i class="fa-regular fa-block-question"></i>
                       </div>
                     </div>
@@ -26,7 +26,7 @@
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-circle__small", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded-md", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
                   <p><%= character.character_name  %></p>
@@ -74,7 +74,7 @@
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
-                      <div class="card-circle-back-computer">
+                      <div class="card-rounded-back-computer">
                         <i class="fa-regular fa-block-question"></i>
                       </div>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-circle__computer", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded-xxs", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
                   <p><%= character.character_name  %></p>

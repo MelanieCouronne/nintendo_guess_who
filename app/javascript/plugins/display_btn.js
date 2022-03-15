@@ -2,8 +2,8 @@ const displayBtn = () => {
 
   // Variable
   const hiddenBtn = document.querySelector('span.d-none');
-  const countBackClass = document.querySelectorAll('.card-circle-back');
-  const frontCards = document.querySelectorAll('.card-circle__small');
+  const countBackClass = document.querySelectorAll('.card-rounded-back');
+  const frontCards = document.querySelectorAll('.card-rounded-md');
   const formInput = document.querySelector('#question-form');
 
   // Validate form on click

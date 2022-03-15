@@ -15,7 +15,7 @@
 
                 <label class="" for="character_id_<%= character.id %>">
                   <input type="radio" name="character[id]" value=<%= character.id %> id="character_id_<%= character.id %>">
-                  <%= image_tag(character.image_url, class: "card-circle__verysmall") %>
+                  <%= image_tag(character.image_url, class: "card-rounded-xs") %>
                 </label>
 
                 <%= character.character_name  %>

@@ -1,32 +1,8 @@
-.card-circle {
+.card-rounded {
   width: 110px;
   height: 110px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-
-  &__small {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    margin-bottom: 5px;
-  }
-
-   &__verysmall {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    margin: 5px 10px 5px 10px;
-  }
-
-    &__computer {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    margin-bottom: 5px;
-  }
 
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
@@ -39,10 +15,41 @@
     width: 150px;
     height: 150px;
   }
-
 }
 
-.card-circle-back {
+.card-rounded-xs {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 5px 10px 5px 10px;
+}
+
+.card-rounded-xxs {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+}
+
+.card-rounded-md {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+  }
+
+.card-rounded-xl {
+  width: 400px;
+  height: 400px;
+  border-radius: 2%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin: 40px;
+}
+
+.card-rounded-back {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +83,7 @@
 }
 
 
- .card-circle-back-computer {
+.card-rounded-back-computer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,13 +99,4 @@
     color: white;
     font-size: 50px;
   }
-  }
-
-
-.card-circle-xl {
-  width: 400px;
-  height: 400px;
-  border-radius: 2%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin: 40px;
 }

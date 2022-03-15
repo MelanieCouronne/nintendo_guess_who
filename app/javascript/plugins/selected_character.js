@@ -1,7 +1,7 @@
 const selectedCharacter = (item) => {
 
   // Variable
-  const triggerBtns = document.querySelectorAll('.card-circle');
+  const triggerBtns = document.querySelectorAll('.card-rounded');
 
   // Handle border on selected character & validation of form
   if (triggerBtns) {
