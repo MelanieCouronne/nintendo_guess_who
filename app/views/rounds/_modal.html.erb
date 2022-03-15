@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="guesswhoModal" tabindex="-1" aria-labelledby="guesswhoModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -5,29 +6,27 @@
         <h5 class="modal-title" id="guesswhoModalLabel">Your guess is:</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <form action=<%= game_path(@game) %> method="get" accept-charset="UTF-8" >
+        <div class="modal-body parent-game options">
+          <input type="hidden" name="character[id]" value="" />
+          <% @characters.each do |character| %>
+            <% if !@game.user_rejected_characters.include?(character.id) %>
+              <div class="text-center">
 
-        <%= form_for(@game, method: :get, remote: true) do |f| %>
-          <div class="d-flex options">
-            <input type="hidden" name="game[id]" value="" />
-            <% @characters.each do |character| %>
-              <% if !@game.user_rejected_characters.include?(character.id) %>
-                <div class="text-center">
+                <label class="" for="character_id_<%= character.id %>">
+                  <input type="radio" name="character[id]" value=<%= character.id %> id="character_id_<%= character.id %>">
+                  <%= image_tag(character.image_url, class: "card-circle__verysmall") %>
+                </label>
 
-                  <label for="game_id_<%= character.id %>">
-                    <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
-                    <%= image_tag(character.image_url, class: "card-circle__verysmall") %>
-                  </label>
-
-                  <p><%= character.character_name  %></p>
-                </div>
-              <% end %>
+                <%= character.character_name  %>
+              </div>
             <% end %>
-          </div>
-          <input type="submit" class='btn btn-danger mb-5' name="commit" value="Guess who" data-disable-with="Guess who" />
-        <% end %>
-
-      </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <input name="submit" id="guesswho" type="submit" class="btn btn-primary" value="Guess who" data-disable-with="Guess who" />
+        </div>
+      </form>
     </div>
   </div>
 </div>
