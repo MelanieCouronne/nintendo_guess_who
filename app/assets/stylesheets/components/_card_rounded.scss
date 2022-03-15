@@ -103,3 +103,15 @@
     border: $red-guesswho 6px solid;
   }
 }
+
+.card-checkbox {
+  position: absolute;
+  top: -39px;
+  right: 37px;
+  background-color: white;
+  color: $red-guesswho;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+  border-radius: 4px;
+}
