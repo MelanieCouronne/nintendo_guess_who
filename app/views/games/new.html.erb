@@ -11,7 +11,7 @@
             <div class="position-relative-for-cards">
               <label for="game_id_<%= character.id %>">
                 <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
-                <%= image_tag(character.image_url, class: "card-rounded") %>
+                <%= image_tag(character.image_url, class: "card-rounded box-bounce bounce") %>
               </label>
               <div class="slot-white"></div>
               <%# <div class="card-title-white"> %>
