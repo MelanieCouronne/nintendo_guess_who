@@ -1,24 +1,31 @@
 .card-rounded {
-  width: 110px;
-  height: 110px;
+  width: 95px;
+  height: 95px;
   border-radius: 5%;
   box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
-  position: absolute;
-  bottom: -80px;
-  left: 32px;
+  align-content: center;
+  // position: absolute;
+  // bottom: -80px;
+  // left: 31px;
   border: rgba(0,0,0,0.2) 0.8px solid;
+
   cursor: pointer;
 
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
+    position: absolute;
     width: 130px;
     height: 130px;
+    left: 25px;
+    transform: skew(361deg);
   }
 
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
     width: 150px;
     height: 150px;
+    bottom: -80px;
+    left: 31px;
   }
 }
 

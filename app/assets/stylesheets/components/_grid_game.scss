@@ -26,11 +26,12 @@
 
 .parent-game {
   display: grid;
+  justify-content: space-around;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 0px; //6px
-  grid-row-gap: 8px;
-  margin: 80px auto 30px auto;
+  grid-column-gap: 10px; //6px
+  grid-row-gap: 15px;
+  margin: 20px 0;
 
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -38,6 +39,7 @@
       grid-template-rows: repeat(6, 1fr);
       grid-column-gap: 0px; //10px
       grid-row-gap: 0px;
+      margin: 80px auto 30px auto;
     }
 
     /* Large devices (desktops, 992px and up) */
