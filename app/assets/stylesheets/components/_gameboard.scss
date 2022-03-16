@@ -26,9 +26,11 @@
 .rectangle-red-xxl {
   width: 1296px;
   height: 540px;
-  background-color: $red-guesswho;
+  box-sizing: border-box;
+  // background-color: $red-guesswho;
+  background: linear-gradient(45deg, rgba(230,0,19,1) 0%, rgba(230,0,19,1) 45%, rgb(242, 70, 51));
   border-bottom: #b1010f 18px solid;
-  border-right: #b1010f 8px solid;
+  border-right: #b1010f 12px solid;
   border-radius: 6px;
   box-shadow: 20px 0px 9px rgba(0, 0, 0, 0.2);
 

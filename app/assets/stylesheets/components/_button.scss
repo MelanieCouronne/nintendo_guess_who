@@ -1,3 +1,9 @@
+.btn-rounded {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -18,7 +24,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: $green-guesswho;
   transition: background 0.3s ease;
 }
 
@@ -27,17 +33,34 @@
   color: white;
 }
 
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+
+@mixin btn-arcade($text-color, $background-color, $hover-text-color, $shadow-gradient) {
+	border: none;
+  text-decoration: none;
+  padding: 15px 25px;
+  color: $text-color;
+  border-radius: 50px;
+  background-color: $background-color;
+  display: inline-block;
+  box-shadow: 0 8px darken($background-color, $shadow-gradient);
+
+  &:hover {
+    color: $hover-text-color;
+    box-shadow: 0 6px darken($background-color, $shadow-gradient);
+    top: 2px;
+  }
+
+  &:active {
+    box-shadow: 0 0px darken($background-color, $shadow-gradient);
+    top: 8px;
+  }
+	&:focus {
+		outline: 0;
+	}
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+.btn-arcade-green {
+	// font-weight: bold;
+	left: calc(50% - 27px);
+	@include btn-arcade(#ffffff, $green-guesswho, #ffffff, 10%);
 }
