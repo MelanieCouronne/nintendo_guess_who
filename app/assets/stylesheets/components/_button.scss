@@ -1,0 +1,66 @@
+.btn-rounded {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: $red-guesswho;
+  border: 1px solid $red-guesswho;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $green-guesswho;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+
+@mixin btn-arcade($text-color, $background-color, $hover-text-color, $shadow-gradient) {
+	border: none;
+  text-decoration: none;
+  padding: 15px 28px;
+  color: $text-color;
+  border-radius: 50px;
+  background-color: $background-color;
+  display: inline-block;
+  box-shadow: 0 8px darken($background-color, $shadow-gradient);
+
+  &:hover {
+    color: $hover-text-color;
+    box-shadow: 0 6px darken($background-color, $shadow-gradient);
+    top: 2px;
+  }
+
+  &:active {
+    box-shadow: 0 0px darken($background-color, $shadow-gradient);
+    top: 8px;
+  }
+	&:focus {
+		outline: 0;
+	}
+}
+
+.btn-arcade-green {
+	font-size: 18px;
+	left: calc(50% - 27px);
+	@include btn-arcade(#ffffff, $green-guesswho, #ffffff, 10%);
+}

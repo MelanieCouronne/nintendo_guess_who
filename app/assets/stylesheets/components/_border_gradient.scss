@@ -1,0 +1,11 @@
+/* Shapes */
+.border-gradient {
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+
+/* Colors */
+.border-gradient-red {
+  border-image-source: linear-gradient(to right, #e70616, #f5642b);
+}

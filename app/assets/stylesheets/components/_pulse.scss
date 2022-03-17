@@ -1,13 +1,14 @@
-.pulse {
+.pulse-red, .card-border-red-pulse:hover {
   // cursor: pointer;
   box-shadow: 0 0 0 rgba(230,0,19, 0.8);
-  animation: pulse 2s infinite;
+  animation: pulse-red 2s infinite;
 }
-.pulse:hover {
+
+.pulse-red:hover {
   animation: none;
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes pulse-red {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(230, 18, 12, 0.8);
   }
@@ -19,7 +20,7 @@
   }
 }
 
-@keyframes pulse {
+@keyframes pulse-red {
   0% {
     -moz-box-shadow: 0 0 0 0 rgba(230, 18, 12, 0.8);
     box-shadow: 0 0 0 0 rgba(230, 18, 12, 0.8);
@@ -31,5 +32,80 @@
   100% {
       -moz-box-shadow: 0 0 0 0 rgba(230, 18, 12, 0);
       box-shadow: 0 0 0 0 rgba(230, 18, 12, 0);
+  }
+}
+
+.pulse-green, .card-border-green-pulse:hover {
+  // cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 178, 88, 0.8);
+  animation: pulse-green 2s infinite;
+}
+
+.pulse-green:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse-green {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 150, 80, 0.8);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 7px rgba(0, 150, 80, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0, 150, 80, 0);
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(0, 150, 80, 0.8);
+    box-shadow: 0 0 0 0 rgba(0, 150, 80, 0.8);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 7px rgba(0, 150, 80, 0);
+      box-shadow: 0 0 0 7px rgba(0, 150, 80, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(0, 150, 80, 0);
+      box-shadow: 0 0 0 0 rgba(0, 150, 80, 0);
+  }
+}
+
+
+.pulse-white, .card-border-white-pulse:hover {
+  // cursor: pointer;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.9);
+  animation: pulse-white 2s infinite;
+}
+
+.pulse-white:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse-white {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(219, 250, 219, 0.9);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255, 130, 80, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255, 130, 80, 0);
+  }
+}
+
+@keyframes pulse-white {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(219, 250, 219, 0.9);
+    box-shadow: 0 0 0 0 rgba(219, 250, 219, 0.9);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(219, 250, 219, 0);
+      box-shadow: 0 0 0 10px rgba(219, 250, 219, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(219, 250, 219, 0);
+      box-shadow: 0 0 0 0 rgba(219, 250, 219, 0);
   }
 }
