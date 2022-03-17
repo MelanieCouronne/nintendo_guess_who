@@ -10,6 +10,13 @@
 }
 
 //** For user dashboard
+
+.card-white {
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -17,7 +24,7 @@
   // box-shadow: 0 0 3px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 6px;
+  // border-radius: 6px;
 }
 
 .card-product img {
@@ -25,6 +32,7 @@
   width: 120px;
   object-fit: cover;
   margin-right: 16px;
+  border-radius: 6px;
 }
 
 .card-product h2 {
@@ -44,7 +52,9 @@
 
 .card-question {
   text-align: left;
-  height: 20px!important;
+  color: #3f444abd;
+  background-color: white;
+  border-radius: 6px;
 }
 
 .card-product .card-product-infos {

@@ -1,15 +1,15 @@
 <div class="wrapper-background">
   <div class="wrapper-parent">
     <% if @game.round_count == 0 %>
-      <h1 class="text-center p-3">First round!</h1>
+      <h1 class="text-center p-3 mb-4">First round!</h1>
     <% else %>
-      <h1 class="text-center p-3">Round n°<%= @game.round_count + 1 %></h1>
+      <h1 class="text-center p-3 mb-4">Round n°<%= @game.round_count + 1 %></h1>
     <% end %>
 
     <%# Questions for small devices start here %>
 
-    <div id="question-for-sm-device" class="text-center p-3">
-      <h4>Choose a question</h4>
+    <div id="question-for-sm-device" class="card-white text-center p-3">
+      <h4 class="my-3">Choose a question</h4>
 
       <%# Form %>
       <%= simple_form_for([@game, @round]) do |f| %>
@@ -18,8 +18,8 @@
         </div>
         <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
       <% end %>
-
-      <div class="card-product">
+      <div class="separator-top-gray"></div>
+      <div class="card-product mt-3">
         <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
         <div class="card-product-infos">
           <h2>Previous question & answer</h2>
@@ -42,7 +42,7 @@
 
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
-        <h2 class="text-center p-4 mb-3">Your dashboard</h2>
+        <h4 class="text-center p-4 mb-2 mt-4">Your dashboard</h4>
         <div id="player-cards" class="parent-round">
           <% @characters.each do |character| %>
             <div class="box">
@@ -73,8 +73,8 @@
 
         <%# Questions for tablet and computer start here %>
 
-        <div id="question-for-md-device" class="text-center p-3 d-none">
-          <h4>Choose a question</h4>
+        <div id="question-for-md-device" class="card-white text-center p-3 d-none">
+          <h4 class="my-3">Choose a question</h4>
 
           <%# Form %>
           <%= simple_form_for([@game, @round]) do |f| %>
@@ -84,19 +84,20 @@
             <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
           <% end %>
 
-          <div class="card-product">
+          <div class="separator-top-gray"></div>
+          <div class="card-product mt-3">
             <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
             <div class="card-product-infos">
               <h2>Previous question/answer</h2>
               <% if @game.rounds.any? %>
                 <p>Question: <%= @game.rounds.last.user_question.question.title %></p>
                 <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
-                  <p>Answer: this is true!</p>
+                  <p>Answer: This is true!</p>
                 <% else %>
-                  <p>Answer: sorry that's false!</p>
+                  <p>Answer: Sorry that's false.</p>
                 <% end %>
               <% else %>
-                <p>No question yet!</p>
+                <p>Waiting for your first question.</p>
               <% end %>
 
             </div>
