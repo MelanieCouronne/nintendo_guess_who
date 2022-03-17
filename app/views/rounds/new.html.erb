@@ -22,16 +22,16 @@
       <div class="card-product">
         <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
         <div class="card-product-infos">
-          <h2>Previous question/answer</h2>
+          <h2>Previous question & answer</h2>
           <% if @game.rounds.any? %>
             <p>Question: <%= @game.rounds.last.user_question.question.title %></p>
             <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
-              <p>Answer: this is true!</p>
+              <p>Answer: This is true!</p>
             <% else %>
-              <p>Answer: sorry that's false!</p>
+              <p>Answer: Sorry that's false.</p>
             <% end %>
           <% else %>
-            <p>No question yet!</p>
+            <p>Waiting for your first question.</p>
           <% end %>
 
         </div>
@@ -40,7 +40,7 @@
 
     <%# Questions end here %>
 
-    <div class="d-flex justify-center">
+    <div class="d-flex justify-content-center">
       <div id="player-dashboard">
         <h2 class="text-center p-4 mb-3">Your dashboard</h2>
         <div id="player-cards" class="parent-round">
@@ -60,7 +60,7 @@
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-rounded", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded-round", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
                 </div>
