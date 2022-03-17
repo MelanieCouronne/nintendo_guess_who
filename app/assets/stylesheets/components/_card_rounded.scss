@@ -2,7 +2,6 @@
   width: 95px;
   height: 95px;
   border-radius: 5%;
-  box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
   align-content: center;
   border: rgb(255, 255, 255) 0.8px solid;
   cursor: pointer;
@@ -15,6 +14,7 @@
     bottom: -80px;
     left: 25px;
     border: rgb(255, 255, 255) 0.6px solid;
+    box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
     transform: skew(361deg);
   }
 
