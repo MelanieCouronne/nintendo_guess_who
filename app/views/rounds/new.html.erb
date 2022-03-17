@@ -22,9 +22,9 @@
       <div class="card-product mt-3">
         <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
         <div class="card-product-infos">
-          <h2>Previous question & answer</h2>
+          <h2>Your last question was:</h2>
           <% if @game.rounds.any? %>
-            <p>Question: <%= @game.rounds.last.user_question.question.title %></p>
+            <p><%= @game.rounds.last.user_question.question.title %></p>
             <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
               <p>Answer: This is true!</p>
             <% else %>
