@@ -4,11 +4,7 @@
   border-radius: 5%;
   box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
   align-content: center;
-  // position: absolute;
-  // bottom: -80px;
-  // left: 31px;
-  border: rgba(0,0,0,0.2) 0.8px solid;
-
+  border: rgb(255, 255, 255) 0.8px solid;
   cursor: pointer;
 
   /* Medium devices (tablets, 768px and up) */
@@ -16,7 +12,9 @@
     position: absolute;
     width: 130px;
     height: 130px;
+    bottom: -80px;
     left: 25px;
+    border: rgb(255, 255, 255) 0.6px solid;
     transform: skew(361deg);
   }
 
@@ -120,22 +118,23 @@
   font-size: 12px;
   line-height: 0.7;
   padding: 6px;
+  border: 0.5px white solid;
   border-radius: 50%;
   z-index: 999;
 
    /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
-    position: absolute;
-    top: -39px;
-    right: 37px;
-    font-size: 12px;
-    line-height: 1;
+    top: -33px;
+    right: 18px;
     padding: 5px;
-    border-radius: 50%;
   }
 
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-
+    top: -52px;
+    right: 27px;
+    font-size: 14px;
+    line-height: 1;
+    padding: 7px;
   }
 }

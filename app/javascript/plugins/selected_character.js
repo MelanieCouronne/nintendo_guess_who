@@ -26,14 +26,18 @@ const selectedCharacter = (item) => {
             if (mediaQuery.matches === true) {
               checkbox.classList.remove('pulse-green');
             } else {
-              checkbox.classList.remove('pulse-red');
+              checkbox.classList.remove('pulse-white');
             };
           });
         }
 
-      // Add checkbox on new selected character
-      cardToCheck.classList.remove('d-none');
-      cardToCheck.classList.add('pulse-green');
+        // Add checkbox on new selected character
+        cardToCheck.classList.remove('d-none');
+        if (mediaQuery.matches === true) {
+          cardToCheck.classList.add('pulse-green');
+        } else {
+          cardToCheck.classList.add('pulse-white');
+        };
 
       });
     });

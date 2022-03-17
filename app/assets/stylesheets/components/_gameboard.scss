@@ -11,6 +11,15 @@
   }
 }
 
+.position-relative-for-card-checkboxes {
+  /* Medium devices (tablets, 768px and up) */
+  @media (max-width: 767px) {
+    position: relative;
+    // height: 130px;
+  }
+}
+
+
 .gameboard-red {
   position: relative;
   width: 200px;

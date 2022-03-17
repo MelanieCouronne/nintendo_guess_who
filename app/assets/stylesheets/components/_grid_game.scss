@@ -26,7 +26,6 @@
 
 .parent-game {
   display: grid;
-  justify-content: space-around;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-column-gap: 10px; //6px
