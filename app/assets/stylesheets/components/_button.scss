@@ -37,7 +37,7 @@
 @mixin btn-arcade($text-color, $background-color, $hover-text-color, $shadow-gradient) {
 	border: none;
   text-decoration: none;
-  padding: 15px 28px;
+  padding: 14px 24px;
   color: $text-color;
   border-radius: 50px;
   background-color: $background-color;
@@ -57,10 +57,20 @@
 	&:focus {
 		outline: 0;
 	}
+
+  @media (min-width: 768px) {
+    padding: 15px 28px;
+  }
+
 }
 
 .btn-arcade-green {
-	font-size: 18px;
+	font-size: 16px;
 	left: calc(50% - 27px);
 	@include btn-arcade(#ffffff, $green-guesswho, #ffffff, 10%);
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
 }

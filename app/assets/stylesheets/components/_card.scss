@@ -10,30 +10,42 @@
 }
 
 //** For user dashboard
+
+.card-white {
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  width: 390px;
+  overflow: hidden;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 3px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  // border-radius: 6px;
 }
 
 .card-product img {
   height: 100%;
   width: 120px;
   object-fit: cover;
-  margin-right: 30px;
+  margin-right: 16px;
+  border-radius: 6px;
 }
 
 .card-product h2 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: normal;
   margin: 0;
 }
 
 .card-product p {
   font-size: 16px;
+  font-weight: lighter;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -42,10 +54,13 @@
 
 .card-question {
   text-align: left;
-  height: 20px!important;
+  font-size: 16px;
+  color: #3f444abd;
+  background-color: white;
+  border-radius: 6px;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 16px 16px 16px 0;
   text-align: left;
 }
