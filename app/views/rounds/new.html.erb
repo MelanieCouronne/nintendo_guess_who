@@ -16,7 +16,7 @@
         <div class="">
           <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' }, class: 'card-question' }, label_method: :title, include_blank: false %>
         </div>
-        <%= f.button :submit, label: "My turn!", class: 'btn btn-danger mt-4 mb-5'%>
+        <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
       <% end %>
 
       <div class="card-product">
@@ -40,7 +40,7 @@
 
     <%# Questions end here %>
 
-    <div class="d-flex">
+    <div class="d-flex justify-center">
       <div id="player-dashboard">
         <h2 class="text-center p-4 mb-3">Your dashboard</h2>
         <div id="player-cards" class="parent-round">
@@ -81,7 +81,7 @@
             <div class="">
               <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' }, class: 'card-question' }, label_method: :title, include_blank: false %>
             </div>
-            <%= f.button :submit, label: "My turn!", class: 'btn btn-danger mt-4 mb-5'%>
+            <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
           <% end %>
 
           <div class="card-product">
