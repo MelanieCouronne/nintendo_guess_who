@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 10px; //6px
+  grid-column-gap: 10px;
   grid-row-gap: 15px;
   margin: 20px 0;
 
@@ -54,8 +54,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 24px;
-  grid-row-gap: 50px;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
   margin: 0 auto 60px auto;
 
     /* Medium devices (tablets, 768px and up) */
