@@ -9,15 +9,12 @@ export default class extends Controller {
       width: "330px"
     });
 
-    $(".js-example-placeholder-single").select2({
+    $(".js-theme-and-placeholder-single").select2({
       placeholder: "Please, select a question",
       allowClear: true,
       theme: "classic"
     });
 
-    // $(".js-example-basic-multiple-limit").select2({
-    //   maximumSelectionLength: 1
-    // });
   };
 
 }
