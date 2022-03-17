@@ -21,15 +21,15 @@
 }
 
 .wrapper-parent{
-  margin: 100px auto 15px;
+  margin: 70px auto 15px;
 }
 
 .parent-game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 15px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   margin: 20px 0;
 
     /* Medium devices (tablets, 768px and up) */
@@ -54,7 +54,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 0;
   grid-row-gap: 0;
   margin: 0 auto 60px auto;
 
