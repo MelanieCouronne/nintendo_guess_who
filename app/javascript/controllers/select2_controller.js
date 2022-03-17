@@ -8,5 +8,15 @@ export default class extends Controller {
     $(this.element).select2({
       width: "100%"
     });
-  }
+
+    $(".js-example-placeholder-single").select2({
+      placeholder: "Please, select a question",
+      allowClear: true
+    });
+
+    // $(".js-example-basic-multiple-limit").select2({
+    //   maximumSelectionLength: 1
+    // });
+  };
+
 }
