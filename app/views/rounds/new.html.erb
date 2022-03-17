@@ -9,36 +9,11 @@
     <%# Questions for small devices start here %>
 
     <div id="question-for-sm-device" class="card-white text-center p-3">
-      <h4 class="my-3">Choose a question</h4>
+      <%= render 'question-form' %>
 
-      <%# Form %>
-      <%= simple_form_for([@game, @round]) do |f| %>
-        <div class="">
-          <%= f.input :user_question, collection: @questions, label: false, prompt: "", input_html: { data: { controller: 'select2' }, class: 'card-question js-example-placeholder-single' }, label_method: :title, include_blank: false %>
-        </div>
-        <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
-      <% end %>
-      <div class="separator-top-gray"></div>
-      <div class="card-product mt-3">
-        <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
-        <div class="card-product-infos">
-          <h2>Your last question was:</h2>
-          <% if @game.rounds.any? %>
-            <p><%= @game.rounds.last.user_question.question.title %></p>
-            <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
-              <p>Answer: This is true!</p>
-            <% else %>
-              <p>Answer: Sorry that's false.</p>
-            <% end %>
-          <% else %>
-            <p>Waiting for your first question.</p>
-          <% end %>
-
-        </div>
-      </div>
     </div>
 
-    <%# Questions end here %>
+    <%# Questions for small devices end here %>
 
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
@@ -74,34 +49,7 @@
         <%# Questions for tablet and computer start here %>
 
         <div id="question-for-md-device" class="card-white text-center p-3 d-none">
-          <h4 class="my-3">Choose a question</h4>
 
-          <%# Form %>
-          <%= simple_form_for([@game, @round]) do |f| %>
-            <div class="">
-              <%= f.input :user_question, collection: @questions, label: false, prompt: "Please, select a question", input_html: { data: { controller: 'select2' }, class: 'card-question' }, label_method: :title, include_blank: false %>
-            </div>
-            <%= f.button :submit, "Submit your question!", class: 'btn-arcade-green mt-4 mb-5'%>
-          <% end %>
-
-          <div class="separator-top-gray"></div>
-          <div class="card-product mt-3">
-            <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
-            <div class="card-product-infos">
-              <h2>Your last question was:</h2>
-              <% if @game.rounds.any? %>
-                <p><%= @game.rounds.last.user_question.question.title %></p>
-                <% if @game.computer_character.computer_characteristics.include?(@game.rounds.last.user_question.question.id) %>
-                  <p>Answer: This is true!</p>
-                <% else %>
-                  <p>Answer: Sorry that's false.</p>
-                <% end %>
-              <% else %>
-                <p>Waiting for your first question.</p>
-              <% end %>
-
-            </div>
-          </div>
         </div>
 
         <%# Questions end here %>
