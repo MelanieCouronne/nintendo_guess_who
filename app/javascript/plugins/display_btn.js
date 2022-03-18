@@ -1,16 +1,18 @@
 const displayBtn = () => {
 
   // Variable
-  const hiddenBtn = document.querySelector('span.d-none');
+  const guesswhoBtn = document.querySelector('#guesswho-btn');
   const countBackClass = document.querySelectorAll('.card-rounded-back');
-  const frontCards = document.querySelectorAll('.card-rounded-md');
-  const formInput = document.querySelector('#question-form');
+  const frontCards = document.querySelectorAll('.card-rounded-round');
+  const formForSmDevice = document.querySelector('#question-for-sm-device');
+  const formForMdDevice = document.querySelector('#question-for-md-device');
 
   // Validate form on click
-  if (hiddenBtn) {
+  if (guesswhoBtn) {
     if (countBackClass.length >= 22) {
-      hiddenBtn.classList.remove('d-none');
-      formInput.classList.add('d-none');
+      guesswhoBtn.classList.remove('d-none');
+      formForSmDevice.classList.add('d-none');
+      formForMdDevice.classList.add('d-none');
 
       frontCards.forEach((frontCard) => {
         frontCard.classList.add('pulse');

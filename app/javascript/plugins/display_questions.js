@@ -1,18 +1,28 @@
 const displayQuestions = () => {
 
-  // Variable
+  // Variable for Questions
   const mediaQuery = window.matchMedia("(max-width: 767px)");
   const formForSmDevice = document.querySelector('#question-for-sm-device');
   const formForMdDevice = document.querySelector('#question-for-md-device');
+
+  // Variable for Guess who? button
+  const guesswhoBtn = document.querySelector('#guesswho-btn');
   const countBackClass = document.querySelectorAll('.card-rounded-back');
-  const frontCards = document.querySelectorAll('.card-rounded-md');
-  const formInput = document.querySelector('#question-form');
+  const frontCards = document.querySelectorAll('.card-rounded-round');
 
   // Validate form on click
-  if (formForMdDevice) {
+  if (formForSmDevice) {
     if (mediaQuery.matches === true) {
-      formForMdDevice.classList.add('d-none');
-      formForSmDevice.classList.remove('d-none');
+      // Display button
+      if (countBackClass.length >= 22) {
+        guesswhoBtn.classList.remove('d-none');
+        formForSmDevice.classList.add('d-none');
+        formForMdDevice.classList.add('d-none');
+
+        // frontCards.forEach((frontCard) => {
+        //   frontCard.classList.add('pulse-white-large');
+        // });
+      }
     } else {
       formForMdDevice.classList.remove('d-none');
       formForSmDevice.classList.add('d-none');

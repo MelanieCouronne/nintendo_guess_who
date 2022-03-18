@@ -8,13 +8,16 @@
     <% end %>
 
     <%# Questions for small devices start here %>
-
     <div id="question-for-sm-device" class="card-white text-center p-3">
       <%= render 'question-form' %>
-
     </div>
-
     <%# Questions for small devices end here %>
+
+    <%# Render btn Guess Who with modal for final choice %>
+    <div class="card-product text-center">
+      <span id="guesswho-btn" class='d-none btn-arcade-green mt-4 mb-5' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess who?</span>
+      <%= render 'modal' %>
+    </div>
 
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
@@ -44,15 +47,11 @@
             </div>
           <% end %>
         </div>
-        <span class='d-none btn btn-danger mt-4 ms-5 mb-5' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess Who!</span>
-        <%= render 'modal' %>
 
         <%# Questions for tablet and computer start here %>
-
         <div id="question-for-md-device" class="card-white text-center p-3 d-none">
 
         </div>
-
         <%# Questions end here %>
 
       </div>

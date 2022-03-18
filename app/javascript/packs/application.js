@@ -31,14 +31,14 @@ application.load(definitionsFromContext(context))
 
 // Internal imports, e.g:
 import { selectedCharacter } from '../plugins/selected_character';
-import { displayBtn } from "../plugins/display_btn";
+// import { displayBtn } from "../plugins/display_btn";
 import { displayQuestions } from "../plugins/display_questions";
 // import { guesswhoSubmit } from "../plugins/guesswho_submit";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   selectedCharacter();
-  displayBtn();
+  // displayBtn();
   displayQuestions();
   // guesswhoSubmit();
 });
