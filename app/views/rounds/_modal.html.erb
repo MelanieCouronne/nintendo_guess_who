@@ -7,24 +7,26 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action=<%= game_path(@game) %> method="get" accept-charset="UTF-8" >
-        <div class="modal-body parent-game options">
+        <div class="modal-body d-flex justify-content-evenly options">
           <input type="hidden" name="character[id]" value="" />
           <% @characters.each do |character| %>
             <% if !@game.user_rejected_characters.include?(character.id) %>
-              <div class="text-center">
+              <div class="d-flex flex-column text-center">
 
                 <label class="" for="character_id_<%= character.id %>">
                   <input type="radio" name="character[id]" value=<%= character.id %> id="character_id_<%= character.id %>">
-                  <%= image_tag(character.image_url, class: "card-rounded-xs") %>
+                  <%= image_tag(character.image_url, class: "card-rounded-round") %>
                 </label>
 
-                <%= character.character_name  %>
+                <p class="p-3 m-0">
+                  <%= character.character_name  %>
+                </p>
               </div>
             <% end %>
           <% end %>
         </div>
         <div class="modal-footer">
-          <input name="submit" id="guesswho" type="submit" class="btn btn-primary" value="Guess who" data-disable-with="Guess who" />
+          <input name="submit" id="guesswho" type="submit" class="btn-arcade-green" value="Guess who" data-disable-with="Guess who" />
         </div>
       </form>
     </div>
