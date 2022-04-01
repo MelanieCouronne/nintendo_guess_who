@@ -21,7 +21,10 @@
 }
 
 .wrapper-parent{
-  margin: 70px auto 15px;
+  margin: 0 auto 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .parent-game {
