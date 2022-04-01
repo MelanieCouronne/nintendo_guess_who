@@ -1,4 +1,4 @@
-<div class="wrapper-background">
+<%# <div class="wrapper-background"> %>
   <div class="wrapper-parent">
     <% if @game.round_count == 0 %>
       <h1 class="text-center p-3 mb-4">First round!</h1>
@@ -14,9 +14,9 @@
     <%# Questions for small devices end here %>
 
     <%# Render btn Guess Who with modal for final choice %>
-    <div class="card-white text-center p-3">
-    <h4 class="my-3">Time to choose!</h4>
-      <span id="guesswho-btn" class='d-none btn-arcade-green mt-4 mb-5' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess who?</span>
+    <div id="guesswho-btn" class="card-white-sm text-center p-3 d-none">
+    <h4 class="">Time to choose!</h4>
+      <span class='btn-arcade-green mt-2 mb-1' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess who?</span>
       <%= render 'modal' %>
     </div>
 
@@ -107,4 +107,4 @@
       </div>
     </div>
   </div>
-</div>
+<%# </div> %>
