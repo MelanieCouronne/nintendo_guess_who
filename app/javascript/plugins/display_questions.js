@@ -10,7 +10,8 @@ const displayQuestions = () => {
   const countBackClass = document.querySelectorAll('.card-rounded-back');
   const frontCards = document.querySelectorAll('.card-rounded-round');
 
-
+  // Variable for gameboard
+  const slots = document.querySelectorAll('.slot-white');
 
   if (formForSmDevice) {
     if (countBackClass.length >= 22) {

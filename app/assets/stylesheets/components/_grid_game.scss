@@ -65,9 +65,9 @@
     @media (min-width: 768px) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(6, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 50px;
-      margin-bottom: 60px;
+      grid-column-gap: 0px; //10px
+      grid-row-gap: 0px;
+      margin: 65px auto 30px auto;
     }
 
     /* Large devices (desktops, 992px and up) */
