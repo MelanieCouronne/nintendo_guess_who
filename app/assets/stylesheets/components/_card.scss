@@ -17,6 +17,14 @@
   border: 1px solid lightgray;
   width: 390px;
   overflow: hidden;
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    width: 550px;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {}
 }
 
 .card-white-sm {
