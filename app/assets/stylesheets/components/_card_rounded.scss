@@ -3,12 +3,11 @@
   height: 130px;
   border-radius: 5%;
   align-content: center;
-  border: rgb(255, 255, 255) 0.8px solid;
 }
 
 .card-rounded {
   cursor: pointer;
-
+  border: rgb(255, 255, 255) 0.8px solid;
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     position: absolute;
@@ -30,6 +29,7 @@
   }
 
   &__for_round {
+    border: rgb(255, 255, 255) 0.8px solid;
 
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -49,6 +49,17 @@
       height: 150px;
       bottom: -80px;
       left: 31px;
+    }
+  }
+
+  &__for_modal {
+    cursor: pointer;
+
+    &:hover {
+      border: double 3px transparent;
+      background-image: linear-gradient(white, white), radial-gradient(circle at bottom left, #11998e, #38ef7d);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
     }
   }
 }
@@ -134,19 +145,19 @@
   }
 }
 
-.card-border-red {
-  border: $red-guesswho 3px solid;
+// .card-border-red {
+//   border: $red-guesswho 3px solid;
 
- /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
-    border: $red-guesswho 6px solid;
-  }
+//  /* Medium devices (tablets, 768px and up) */
+//   @media (min-width: 768px) {
+//     border: $red-guesswho 6px solid;
+//   }
 
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-    border: $red-guesswho 6px solid;
-  }
-}
+//   /* Large devices (desktops, 992px and up) */
+//   @media (min-width: 992px) {
+//     border: $red-guesswho 6px solid;
+//   }
+// }
 
 .card-checkbox {
   position: absolute;
