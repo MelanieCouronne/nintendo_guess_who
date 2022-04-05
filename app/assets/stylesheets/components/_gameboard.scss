@@ -19,7 +19,7 @@
   }
 }
 
-.gameboard-parallelogram-xl {
+.gameboard {
 
   .gameboard-title {
     position: relative;
@@ -54,7 +54,7 @@
     width: 138px;
     height: 8px;
     position: absolute;
-    top: 73px;
+    top: 97px;
     left: 22px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -68,6 +68,21 @@
     width: 156px; //165
     bottom: -80px;
     left: 30px;
+  }
+
+  &__for_round {
+    @media (min-width: 768px) {
+      width: 138px;
+      height: 8px;
+      position: absolute;
+      top: 73px;
+      left: 22px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-color: white;
+      border-bottom: rgb(114, 114, 114) 1px solid;
+      border-right: rgb(114, 114, 114) 1px solid;
+    }
   }
 
 }

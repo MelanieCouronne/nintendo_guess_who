@@ -8,7 +8,7 @@ const displayQuestions = () => {
   // Variable for Guess who? button
   const guesswhoBtn = document.querySelector('#guesswho-btn');
   const countBackClass = document.querySelectorAll('.card-rounded-back');
-  const frontCards = document.querySelectorAll('.card-rounded-round');
+  const frontCards = document.querySelectorAll('.card-rounded__for_round');
 
   // Variable for gameboard
   const slots = document.querySelectorAll('.slot-white');

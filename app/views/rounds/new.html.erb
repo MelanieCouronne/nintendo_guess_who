@@ -23,7 +23,7 @@
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
         <h4 class="text-center p-4 mb-2 mt-4">Your dashboard</h4>
-        <div id="player-cards" class="parent-round gameboard-parallelogram-xl">
+        <div id="player-cards" class="parent-round gameboard">
           <% @characters.each do |character| %>
             <div class="box">
               <% if @game.user_rejected_characters.include?(character.id) %>
@@ -36,16 +36,16 @@
                     </div>
                   </div>
                 </div>
-                <div class="slot-white"></div>
+                <div class="slot-white__for_round"></div>
               <% else %>
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-rounded-round", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded__for_round", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
                 </div>
-                <div class="slot-white"></div>
+                <div class="slot-white__for_round"></div>
               <% end %>
             </div>
           <% end %>

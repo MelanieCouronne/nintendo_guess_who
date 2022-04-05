@@ -16,6 +16,7 @@
     border: rgb(255, 255, 255) 0.6px solid;
     box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
     transform: skew(361deg);
+
   }
 
   /* Large devices (desktops, 992px and up) */
@@ -25,33 +26,33 @@
     bottom: -80px;
     left: 31px;
   }
-}
 
-.card-rounded-round {
-  width: 130px;
-  height: 130px;
-  border-radius: 5%;
-  align-content: center;
-  border: rgb(255, 255, 255) 0.8px solid;
-
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
-    position: absolute;
+  &__for_round {
     width: 130px;
     height: 130px;
-    bottom: 53px;
-    left: 25px;
-    border: rgb(255, 255, 255) 0.6px solid;
-    box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
-    transform: skew(361deg);
-  }
+    border-radius: 5%;
+    align-content: center;
+    border: rgb(255, 255, 255) 0.8px solid;
 
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-    width: 150px;
-    height: 150px;
-    bottom: -80px;
-    left: 31px;
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      bottom: 53px;
+      left: 25px;
+      border: rgb(255, 255, 255) 0.6px solid;
+      box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
+      transform: skew(361deg);
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      width: 150px;
+      height: 150px;
+      bottom: -80px;
+      left: 31px;
+    }
   }
 }
 
