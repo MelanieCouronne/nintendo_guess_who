@@ -93,6 +93,10 @@
   width: 130px;
   height: 130px;
   background-color: $red-guesswho;
+  background-image: asset_url("logo-guesswho.png");
+  background-size: 38%;
+  background-repeat: no-repeat;
+  background-position: center;
   border: rgb(255, 255, 255) 0.8px solid;
   border-radius: 5%;
 
