@@ -1,9 +1,12 @@
-.card-rounded {
+.card-rounded, .card-rounded__for_round, .card-rounded__for_modal {
   width: 130px;
   height: 130px;
   border-radius: 5%;
   align-content: center;
   border: rgb(255, 255, 255) 0.8px solid;
+}
+
+.card-rounded {
   cursor: pointer;
 
   /* Medium devices (tablets, 768px and up) */
@@ -16,7 +19,6 @@
     border: rgb(255, 255, 255) 0.6px solid;
     box-shadow: 17px 0px 17px rgba(0,0,0,0.2);
     transform: skew(361deg);
-
   }
 
   /* Large devices (desktops, 992px and up) */
@@ -28,11 +30,6 @@
   }
 
   &__for_round {
-    width: 130px;
-    height: 130px;
-    border-radius: 5%;
-    align-content: center;
-    border: rgb(255, 255, 255) 0.8px solid;
 
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -80,9 +77,7 @@
   }
 
   /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-
-  }
+  @media (min-width: 992px) {}
 }
 
 .card-rounded-back {
@@ -118,11 +113,6 @@
     height: 150px;
     bottom: -80px;
     left: 31px;
-  }
-
-  i {
-    color: white;
-    font-size: 50px;
   }
 }
 

@@ -11,12 +11,15 @@
 
 //** For user dashboard
 
-.card-white {
+.card-white, .card-white__small {
   background-color: white;
   border-radius: 6px;
   border: 1px solid lightgray;
   width: 390px;
   overflow: hidden;
+}
+
+.card-white {
 
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
@@ -27,13 +30,16 @@
   @media (min-width: 992px) {}
 }
 
-.card-white-sm {
-  background-color: white;
-  border-radius: 6px;
-  border: 1px solid lightgray;
-  width: 390px;
-  height: 140px;
-  overflow: hidden;
+.card-white__small {
+  height: 145px;
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    width: 710px;
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {}
 }
 
 .card-product {
