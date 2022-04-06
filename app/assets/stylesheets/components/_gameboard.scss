@@ -5,19 +5,46 @@
     position: relative;
     // height: 130px;
   }
-
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-  }
 }
 
 .position-relative-for-card-checkboxes {
   /* Medium devices (tablets, 768px and up) */
   @media (max-width: 767px) {
     position: relative;
-    // height: 130px;
   }
 }
+
+.gameboard__for_round, .gameboard__for_game {
+
+  .gameboard-title {
+    position: relative;
+    color: $orange-guesswho;
+    font-size: 18px;
+    top: 35px;
+    left: 8px;
+  }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    width: 720px;
+    height: 784px;
+    background: linear-gradient(45deg, rgba(230, 0, 19, 1) 0%, rgba(230, 0, 19, 1) 45%, rgb(242, 92, 51));
+    border-bottom: #b1010f 35px solid;
+    border-right: #b1010f 12px solid;
+    border-radius: 6px;
+    box-shadow: 20px 0px 9px rgba(0, 0, 0, 0.2);
+    transform: skew(359deg);
+  }
+}
+
+.gameboard__for_round {
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 1100px) {
+    width: 600px;
+    height: 590px;
+  }
+}
+
 
 .gameboard {
 
@@ -40,28 +67,9 @@
     box-shadow: 20px 0px 9px rgba(0, 0, 0, 0.2);
     transform: skew(359deg);
   }
-
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-    // width: 1296px;
-    // height: 540px;
-  }
-
-  &__for_computer {
-    @media (min-width: 992px) {
-      width: 720px;
-      height: 784px;
-      background: linear-gradient(45deg, rgba(167, 1, 15, 1) 0%, rgba(167, 1, 15, 1) 45%, rgb(242, 92, 51));
-      border-bottom: #b1010f 35px solid;
-      border-right: #b1010f 12px solid;
-      border-radius: 6px;
-      box-shadow: 20px 0px 9px rgba(0, 0, 0, 0.2);
-      transform: skew(359deg);
-    }
-  }
 }
 
-.slot-white, .slot-white__for_round, .slot-white__for_round_computer {
+.slot-white__for_game, .slot-white__for_round {
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     width: 138px;
@@ -76,24 +84,18 @@
   }
 }
 
-.slot-white {
-    /* Medium devices (tablets, 768px and up) */
+.slot-white__for_game {
   @media (min-width: 768px) {
     top: 97px;
   }
+}
 
-  &__for_round {
-    @media (min-width: 768px) {
-      top: 73px;
-    }
-
-    &_computer {
-      /* Large devices (desktops, 992px and up) */
-      @media (min-width: 992px) {
-        bottom: -36px;
-        left: 23px;
-      }
-    }
+.slot-white__for_round {
+  @media (min-width: 768px) {
+    top: 73px;
   }
 
+  @media (min-width: 1100px) {
+    width: 108px;
+  }
 }

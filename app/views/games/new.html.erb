@@ -1,7 +1,7 @@
 <div class="container__for_game_new">
   <h1 class="text-center p-3 mb-4">Choose your character!</h1>
   <%= form_for (@game) do |f| %>
-    <div class="parent__for_game options gameboard">
+    <div class="parent__for_game options gameboard__for_game">
       <input type="hidden" name="game[id]" value="" />
       <% @characters.each do |character| %>
         <div class="">
@@ -18,7 +18,7 @@
                 </div>
               </label>
             </div>
-            <div class="slot-white"></div>
+            <div class="slot-white__for_game"></div>
           </div>
 
         </div>

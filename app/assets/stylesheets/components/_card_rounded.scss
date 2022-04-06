@@ -22,7 +22,9 @@
   }
 
   /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {}
+  @media (min-width: 992px) {
+
+  }
 
   &__for_round {
     border: rgb(255, 255, 255) 0.8px solid;
@@ -35,6 +37,13 @@
       border: rgb(255, 255, 255) 0.6px solid;
       box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
       transform: skew(361deg);
+    }
+
+    @media (min-width: 1100px) {
+      width: 100px;
+      height: 100px;
+      bottom: 11px;
+      left: 25px;
     }
   }
 
@@ -70,7 +79,7 @@
   }
 }
 
-.card-rounded-back, .card-rounded-back_computer {
+.card-rounded-back {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,9 +93,6 @@
   background-position: center;
   border: rgb(255, 255, 255) 0.8px solid;
   border-radius: 5%;
-}
-
-.card-rounded-back {
 
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
@@ -99,7 +105,9 @@
   }
 
   /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
+  @media (min-width: 1100px) {
+    width: 100px;
+    height: 100px;
     bottom: -80px;
     left: 25px;
   }
