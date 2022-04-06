@@ -2,7 +2,7 @@ const displayComputerDashboard = (item) => {
 
   // Variables
   const computerDashboard = document.querySelector('#computer-dashboard');
-  const mediaQuery = window.matchMedia("(min-width: 992px)");
+  const mediaQuery = window.matchMedia("(min-width: 1100px)");
 
   // Handle border on selected character
   if (computerDashboard) {
