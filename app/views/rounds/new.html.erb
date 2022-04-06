@@ -53,14 +53,14 @@
 
         <%# Questions for tablet and computer start here %>
         <div id="question-for-md-device" class="card-white text-center p-3 d-none">
-
+          <%= render 'question-form' %>
         </div>
         <%# Questions end here %>
 
       </div>
       <div id="computer-dashboard" class="ms-5">
         <h4 class="text-center p-4 mb-2 mt-4">Computer's dashboard</h4>
-        <div id="computer-cards" class="parent-round gameboard">
+        <div id="computer-cards" class="parent-round-computer gameboard">
           <% @characters.each do |character| %>
             <div class="box-computer">
               <% if @game.computer_rejected_characters.include?(character.id) %>
@@ -90,18 +90,19 @@
         </div>
         <div class="text-center p-3">
           <h4 class="mt-4">Computer's question</h4>
-          <div class="card-product">
+          <div class="card-product p-3">
+            <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
             <div class="card-product-infos">
-              <h2>Previous question/answer</h2>
+              <h2>Computer's last question was:</h2>
               <% if @game.rounds.any? %>
                 <p>Question: <%= @game.rounds.last.computer_question.question.title %></p>
                 <% if @game.user_character.user_characteristics.include?(@game.rounds.last.computer_question.question.id) %>
-                  <p>Answer: this is true!</p>
+                  <p>Answer: This is true!</p>
                 <% else %>
-                  <p>Answer: sorry that's false!</p>
+                  <p>Answer: Sorry that's false.</p>
                 <% end %>
               <% else %>
-                <p>No question yet!</p>
+                <p>Waiting for computer's first question.</p>
               <% end %>
             </div>
           </div>
