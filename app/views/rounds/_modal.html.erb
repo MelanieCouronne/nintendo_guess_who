@@ -1,9 +1,9 @@
 
 <div class="modal fade" id="guesswhoModal" tabindex="-1" aria-labelledby="guesswhoModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header border-none">
-        <h5 class="modal-title" id="guesswhoModalLabel">Your guess is:</h5>
+      <div class="modal-header">
+        <h5 class="modal-title" id="guesswhoModalLabel">Your guess is...</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form action=<%= game_path(@game) %> method="get" accept-charset="UTF-8" >
@@ -18,7 +18,7 @@
                   <%= image_tag(character.image_url, class: "card-rounded__for_modal") %>
                 </label>
 
-                <p class="p-3 m-0">
+                <p class="p-2 m-0">
                   <%= character.character_name  %>
                 </p>
               </div>
