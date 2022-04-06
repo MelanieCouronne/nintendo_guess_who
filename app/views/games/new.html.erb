@@ -1,38 +1,35 @@
-<%# <div class="wrapper-background">
-  <div class="container"> %>
+<div class="container__for_game_new">
+  <h1 class="text-center p-3 mb-4">Choose your character!</h1>
+  <%= form_for (@game) do |f| %>
+    <div class="parent-game options gameboard">
+      <input type="hidden" name="game[id]" value="" />
+      <% @characters.each do |character| %>
+        <div class="">
 
-    <h1 class="text-center p-3 mb-4">Choose your character!</h1>
-    <%= form_for (@game) do |f| %>
-      <div class="parent-game options gameboard">
-        <input type="hidden" name="game[id]" value="" />
-        <% @characters.each do |character| %>
-          <div class="">
-
-            <div class="position-relative-for-cards">
-              <div class="box-bounce bounce">
-                <label for="game_id_<%= character.id %>">
-                  <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
-                  <div class="position-relative-for-card-checkboxes">
-                    <%= image_tag(character.image_url, class: "card-rounded") %>
-                    <div class="card-checkbox d-none">
-                      <i class="fa-solid fa-check"></i>
-                    </div>
+          <div class="position-relative-for-cards">
+            <div class="box-bounce bounce">
+              <label for="game_id_<%= character.id %>">
+                <input type="radio" value="<%= character.id %>" name="game[id]" id="game_id_<%= character.id %>" />
+                <div class="position-relative-for-card-checkboxes">
+                  <%= image_tag(character.image_url, class: "card-rounded") %>
+                  <div class="card-checkbox d-none">
+                    <i class="fa-solid fa-check"></i>
                   </div>
-                </label>
-              </div>
-              <div class="slot-white"></div>
-              <%# <div class="card-title-white"> %>
-                <%#=<p class=""><%#= character.character_name  %><%#=</p>
-              <%# </div> %>
+                </div>
+              </label>
             </div>
-
+            <div class="slot-white"></div>
+            <%# <div class="card-title-white"> %>
+              <%#=<p class=""><%#= character.character_name  %><%#=</p>
+            <%# </div> %>
           </div>
-        <% end %>
-        <%# <span class="gameboard-title">Nintendo • Guess who?</span> %>
-      </div>
-      <div class="my-5">
-        <input type="submit" class='btn-arcade-green' name="commit" value="Let's play?" data-disable-with="Good choice!" />
-      </div>
-    <% end %>
-  <%# </div>
-</div> %>
+
+        </div>
+      <% end %>
+      <%# <span class="gameboard-title">Nintendo • Guess who?</span> %>
+    </div>
+    <div class="my-5">
+      <input type="submit" class='btn-arcade-green' name="commit" value="Let's play?" data-disable-with="Good choice!" />
+    </div>
+  <% end %>
+</div>

@@ -32,17 +32,48 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 }
 
 .container {
-  padding-top: 100px !important;
-  text-align: center;
 
-  /* Medium devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
-    padding-top: 80px !important;
+  &__for_round {
+    padding-top: 100px;
+    text-align: center;
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+      padding-top: 90px;
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {}
   }
 
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-    padding-top: 90px !important;
+  &__for_game {
+    margin: 0 auto;
+    text-align: center;
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+    }
+
+    &_new {
+        padding-top: 100px;
+        margin: 0 auto;
+        text-align: center;
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+          padding-top: 80px;
+        }
+
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+          padding-top: 65px;
+        }
+    }
   }
 }
 
