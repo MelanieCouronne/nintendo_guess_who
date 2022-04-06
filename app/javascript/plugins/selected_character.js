@@ -1,8 +1,3 @@
-import { end } from "@popperjs/core";
-
-// const mediaQuery = window.matchMedia('(max-width: 767px)')
-
-
 const selectedCharacter = (item) => {
 
   // Variable

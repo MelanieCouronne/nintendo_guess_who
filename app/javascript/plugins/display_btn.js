@@ -3,7 +3,7 @@ const displayBtn = () => {
   // Variable
   const guesswhoBtn = document.querySelector('#guesswho-btn');
   const countBackClass = document.querySelectorAll('.card-rounded-back');
-  const frontCards = document.querySelectorAll('.card-rounded-round');
+  const frontCards = document.querySelectorAll('.card-rounded__for_round');
   const formForSmDevice = document.querySelector('#question-for-sm-device');
   const formForMdDevice = document.querySelector('#question-for-md-device');
 

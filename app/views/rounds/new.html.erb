@@ -14,7 +14,7 @@
     <%# Questions for small devices end here %>
 
     <%# Render btn Guess Who with modal for final choice %>
-    <div id="guesswho-btn" class="card-white-sm text-center p-3 d-none">
+    <div id="guesswho-btn" class="card-white__small text-center p-3 d-none">
     <h4 class="">Time to choose!</h4>
       <span class='btn-arcade-green mt-2 mb-1' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess who?</span>
       <%= render 'modal' %>
@@ -23,7 +23,7 @@
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
         <h4 class="text-center p-4 mb-2 mt-4">Your dashboard</h4>
-        <div id="player-cards" class="parent-round">
+        <div id="player-cards" class="parent-round gameboard">
           <% @characters.each do |character| %>
             <div class="box">
               <% if @game.user_rejected_characters.include?(character.id) %>
@@ -36,14 +36,16 @@
                     </div>
                   </div>
                 </div>
+                <div class="slot-white__for_round"></div>
               <% else %>
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-rounded-round", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded__for_round", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
                 </div>
+                <div class="slot-white__for_round"></div>
               <% end %>
             </div>
           <% end %>

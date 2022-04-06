@@ -3,7 +3,7 @@
 
     <h1 class="text-center p-3 mb-4">Choose your character!</h1>
     <%= form_for (@game) do |f| %>
-      <div class="parent-game options gameboard-parallelogram-xl">
+      <div class="parent-game options gameboard">
         <input type="hidden" name="game[id]" value="" />
         <% @characters.each do |character| %>
           <div class="">
