@@ -1,4 +1,4 @@
-.card-rounded, .card-rounded__for_round, .card-rounded__for_modal {
+.card-rounded, .card-rounded__for_round, .card-rounded__for_modal, .card-rounded__for_round_computer {
   width: 130px;
   height: 130px;
   border-radius: 5%;
@@ -34,8 +34,8 @@
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
       position: absolute;
-      width: 130px;
-      height: 130px;
+      // width: 130px;
+      // height: 130px;
       bottom: 53px;
       left: 25px;
       border: rgb(255, 255, 255) 0.6px solid;
@@ -43,13 +43,20 @@
       transform: skew(361deg);
     }
 
-    /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) {
-      width: 150px;
-      height: 150px;
-      bottom: -80px;
-      left: 31px;
+    &_computer {
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+        position: absolute;
+        // width: 130px;
+        // height: 130px;
+        bottom: -34px;
+        left: 25px;
+        border: rgb(255, 255, 255) 0.6px solid;
+        box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
+        transform: skew(361deg);
+      }
     }
+
   }
 
   &__for_modal {
@@ -84,13 +91,13 @@
   }
 }
 
-.card-rounded-xxs {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  margin-bottom: 5px;
-}
+// .card-rounded-xxs {
+//   width: 70px;
+//   height: 70px;
+//   border-radius: 50%;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+//   margin-bottom: 5px;
+// }
 
 .card-rounded-back {
   display: flex;

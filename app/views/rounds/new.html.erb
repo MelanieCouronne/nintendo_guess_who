@@ -59,8 +59,8 @@
 
       </div>
       <div id="computer-dashboard" class="ms-5">
-        <h2 class="text-center p-4 mb-3">Computer's dashboard</h2>
-        <div id="computer-cards" class="parent-round-computer">
+        <h4 class="text-center p-4 mb-2 mt-4">Computer's dashboard</h4>
+        <div id="computer-cards" class="parent-round gameboard">
           <% @characters.each do |character| %>
             <div class="box-computer">
               <% if @game.computer_rejected_characters.include?(character.id) %>
@@ -72,17 +72,17 @@
                       </div>
                     </div>
                   </div>
-                  <p><%= character.character_name  %></p>
                 </div>
+                <div class="slot-white__for_round_computer"></div>
               <% else %>
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-rounded-xxs", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded__for_round_computer", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
-                  <p><%= character.character_name  %></p>
                 </div>
+                <div class="slot-white__for_round_computer"></div>
               <% end %>
             </div>
 
