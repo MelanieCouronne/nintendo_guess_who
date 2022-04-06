@@ -7,14 +7,10 @@ const displayQuestions = () => {
 
   // Variables for Guess who? button
   const guesswhoBtn = document.querySelector('#guesswho-btn');
-  const countBackClass = document.querySelectorAll('.card-rounded-back');
-  const frontCards = document.querySelectorAll('.card-rounded__for_round');
+  const countBackClassForUserOnly = document.querySelectorAll('.count-back-class');
 
-  // Variable for gameboard
-  const slots = document.querySelectorAll('.slot-white');
-
-  if (formForSmDevice) {
-    if (countBackClass.length >= 22) {
+  if (formForSmDevice || formForMdDevice ) {
+    if (countBackClassForUserOnly.length >= 22) {
       guesswhoBtn.classList.remove('d-none');
       formForSmDevice.classList.add('d-none');
       formForMdDevice.classList.add('d-none');
@@ -23,23 +19,6 @@ const displayQuestions = () => {
       formForSmDevice.classList.add('d-none');
     }
   }
-
-  // // Validate form on click
-  // if (formForSmDevice) {
-  //   if (mediaQuery.matches === true) {
-  //     // Display button Guess who
-  //     if (countBackClass.length >= 22) {
-  //       guesswhoBtn.classList.remove('d-none');
-  //       formForSmDevice.classList.add('d-none');
-  //       formForMdDevice.classList.add('d-none');
-  //     } else { // Display Question card above characters cards
-  //       formForSmDevice.classList.remove('d-none');
-  //     };
-  //   } else {
-  //     formForMdDevice.classList.remove('d-none');
-  //     formForSmDevice.classList.add('d-none');
-  //   }
-  // }
 }
 
 export { displayQuestions };

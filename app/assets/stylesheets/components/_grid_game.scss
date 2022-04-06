@@ -2,14 +2,9 @@
 
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-      // height: 1130px;
       margin: 0 auto 0 60px;
-      // background-color: rgba(211, 211, 211, .4);
-      // border-radius: 6px;
       padding: 0 23px;
-      // display: block;
-      // flex-direction: column;
-    }
+  }
 }
 
 .row {
@@ -25,7 +20,7 @@
   align-items: center;
 }
 
-.parent-game {
+.parent__for_game {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -37,21 +32,14 @@
     @media (min-width: 768px) {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(6, 1fr);
-      grid-column-gap: 0px; //10px
-      grid-row-gap: 0px;
       margin: 80px auto 30px auto;
     }
 
     /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 0px; //15px
-      grid-row-gap: 0px; //117px
-    }
+    @media (min-width: 992px) {}
 }
 
-.parent-round {
+.parent__for_round {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
@@ -69,17 +57,10 @@
     }
 
     /* Large devices (desktops, 992px and up) */
-    @media (min-width: 992px) {
-      // grid-template-columns: repeat(4, 1fr);
-      // grid-template-rows: repeat(6, 1fr);
-      // grid-column-gap: 20px;
-      // grid-row-gap: 50px;
-      // margin-bottom: 60px;
-    }
-
+    @media (min-width: 992px) {}
 }
 
-.parent-round-computer {
+.parent__for_round-computer {
   @media (min-width: 992px) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
