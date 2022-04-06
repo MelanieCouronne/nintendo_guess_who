@@ -1,14 +1,11 @@
 .position-relative-for-cards {
   position: relative;
-  /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     position: relative;
-    // height: 130px;
   }
 }
 
 .position-relative-for-card-checkboxes {
-  /* Medium devices (tablets, 768px and up) */
   @media (max-width: 767px) {
     position: relative;
   }
@@ -24,7 +21,6 @@
     left: 8px;
   }
 
-  /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     width: 720px;
     height: 784px;
@@ -38,13 +34,11 @@
 }
 
 .gameboard__for_round {
-  /* Large devices (desktops, 992px and up) */
   @media (min-width: 1100px) {
     width: 600px;
     height: 590px;
   }
 }
-
 
 .gameboard {
 
@@ -56,7 +50,6 @@
     left:8px;
   }
 
-   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     width: 720px;
     height: 784px;
@@ -70,7 +63,6 @@
 }
 
 .slot-white__for_game, .slot-white__for_round {
-  /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     width: 138px;
     height: 8px;
