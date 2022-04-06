@@ -34,6 +34,7 @@ import { selectedCharacter } from '../plugins/selected_character';
 // import { displayBtn } from "../plugins/display_btn";
 import { displayQuestions } from "../plugins/display_questions";
 import { displayBorder } from "../plugins/display_border";
+import { displayComputerDashboard } from "../plugins/display_computer_dashboard";
 // import { guesswhoSubmit } from "../plugins/guesswho_submit";
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   displayQuestions();
   // guesswhoSubmit();
   displayBorder();
+  displayComputerDashboard();
 });

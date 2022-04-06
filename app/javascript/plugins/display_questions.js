@@ -1,11 +1,11 @@
 const displayQuestions = () => {
 
-  // Variable for Questions
+  // Variables for Questions
   const mediaQuery = window.matchMedia("(max-width: 991px)");
   const formForSmDevice = document.querySelector('#question-for-sm-device');
   const formForMdDevice = document.querySelector('#question-for-md-device');
 
-  // Variable for Guess who? button
+  // Variables for Guess who? button
   const guesswhoBtn = document.querySelector('#guesswho-btn');
   const countBackClass = document.querySelectorAll('.card-rounded-back');
   const frontCards = document.querySelectorAll('.card-rounded__for_round');

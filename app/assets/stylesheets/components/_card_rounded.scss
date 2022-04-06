@@ -34,8 +34,6 @@
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
       position: absolute;
-      // width: 130px;
-      // height: 130px;
       bottom: 53px;
       left: 25px;
       border: rgb(255, 255, 255) 0.6px solid;
@@ -43,19 +41,17 @@
       transform: skew(361deg);
     }
 
-    &_computer {
-        /* Large devices (desktops, 992px and up) */
-        @media (min-width: 992px) {
-        position: absolute;
-        // width: 130px;
-        // height: 130px;
-        bottom: -34px;
-        left: 25px;
-        border: rgb(255, 255, 255) 0.6px solid;
-        box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
-        transform: skew(361deg);
-      }
-    }
+    // &_computer {
+    //     /* Large devices (desktops, 992px and up) */
+    //     @media (min-width: 992px) {
+    //     position: absolute;
+    //     bottom: 53px;
+    //     left: 25px;
+    //     border: rgb(255, 255, 255) 0.6px solid;
+    //     box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
+    //     transform: skew(361deg);
+    //   }
+    // }
 
   }
 
@@ -91,15 +87,7 @@
   }
 }
 
-// .card-rounded-xxs {
-//   width: 70px;
-//   height: 70px;
-//   border-radius: 50%;
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-//   margin-bottom: 5px;
-// }
-
-.card-rounded-back {
+.card-rounded-back, .card-rounded-back_computer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,12 +101,13 @@
   background-position: center;
   border: rgb(255, 255, 255) 0.8px solid;
   border-radius: 5%;
+}
+
+.card-rounded-back {
 
   /* Medium devices (tablets, 768px and up) */
   @media (min-width: 768px) {
     position: absolute;
-    width: 130px;
-    height: 130px;
     bottom: -80px;
     left: 25px;
     border: rgb(255, 255, 255) 0.6px solid;
@@ -128,30 +117,39 @@
 
   /* Large devices (desktops, 992px and up) */
   @media (min-width: 992px) {
-    width: 150px;
-    height: 150px;
     bottom: -80px;
-    left: 31px;
+    left: 25px;
   }
 }
 
-.card-rounded-back-computer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  background-color: $red-guesswho;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  text-align: center;
-  margin-bottom: 5px;
+// .card-rounded-back_computer {
+//     /* Large devices (desktops, 992px and up) */
+//     @media (min-width: 992px) {
+//       bottom: -34px;
+//       left: 25px;
+//       border: rgb(255, 255, 255) 0.6px solid;
+//       box-shadow: 17px 0px 17px rgba(0, 0, 0, 0.2);
+//       transform: skew(361deg);
+//     }
+// }
 
-  i {
-    color: white;
-    font-size: 50px;
-  }
-}
+// .card-rounded-back-computer {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 70px;
+//   height: 70px;
+//   background-color: $red-guesswho;
+//   border-radius: 50%;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+//   text-align: center;
+//   margin-bottom: 5px;
+
+//   i {
+//     color: white;
+//     font-size: 50px;
+//   }
+// }
 
 // .card-border-red {
 //   border: $red-guesswho 3px solid;
