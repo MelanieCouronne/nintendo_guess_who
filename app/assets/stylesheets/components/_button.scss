@@ -4,20 +4,19 @@
   border-radius: 50%;
 }
 
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+.btn-red {
+  color: white;
+  background-color: $red-guesswho;
   padding: 8px 24px;
-  border-radius: 50px;
+  border-radius: 6px;
   font-weight: lighter;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
-.btn-ghost:hover {
+.btn-red:hover {
   opacity: 1;
-  color: $red-guesswho;
-  border: 1px solid $red-guesswho;
+  color: white;
 }
 
 .btn-flat {

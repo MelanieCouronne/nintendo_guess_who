@@ -21,9 +21,8 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-              <%= image_tag "user-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "user-avatar.png", class: "avatar-squared dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
-            <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "#", class: "dropdown-item" do %>
                 <i class="fa-solid fa-trophy"></i>
@@ -34,7 +33,7 @@
                 <span>Profile</span>
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-                <i class="fa-regular fa-arrow-right-from-bracket"></i>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span>Log out</span>
               <% end %>
             </div>
