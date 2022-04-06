@@ -1,20 +1,20 @@
 <div class="container__for_round">
   <div class="wrapper-parent">
     <% if @game.round_count == 0 %>
-      <h1 class="text-center p-3 mb-4">First round!</h1>
+      <h1 class="text-center p-3">First round!</h1>
     <% else %>
-      <h1 class="text-center p-3 mb-4">Round n°<%= @game.round_count + 1 %></h1>
+      <h1 class="text-center p-3">Round n°<%= @game.round_count + 1 %></h1>
       <i class="fa-regular fa-block-question"></i>
     <% end %>
 
     <%# Questions for small devices start here %>
-    <div id="question-for-sm-device" class="card-white text-center p-3">
+    <div id="question-for-sm-device" class="card-white text-center p-3 mb-5">
       <%= render 'question-form' %>
     </div>
     <%# Questions for small devices end here %>
 
     <%# Render btn Guess Who with modal for final choice %>
-    <div id="guesswho-btn" class="card-white__small text-center p-3 d-none">
+    <div id="guesswho-btn" class="card-white__small text-center p-3 mb-3 d-none">
     <h4 class="">Time to choose!</h4>
       <span class='btn-arcade-green mt-2 mb-1' data-bs-toggle="modal" data-bs-target="#guesswhoModal">Guess who?</span>
       <%= render 'modal' %>
@@ -22,15 +22,15 @@
 
     <div class="d-flex justify-content-center">
       <div id="player-dashboard">
-        <h4 class="text-center p-4 mb-2 mt-4">Your dashboard</h4>
-        <div id="player-cards" class="parent-round gameboard">
+        <h4 class="text-center p-2 mb-2">Your dashboard</h4>
+        <div id="player-cards" class="parent__for_round gameboard">
           <% @characters.each do |character| %>
             <div class="box">
               <% if @game.user_rejected_characters.include?(character.id) %>
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
-                      <div class="card-rounded-back">
+                      <div class="card-rounded-back count-back-class">
                         <i class="fa-regular fa-block-question"></i>
                       </div>
                     </div>
@@ -52,37 +52,37 @@
         </div>
 
         <%# Questions for tablet and computer start here %>
-        <div id="question-for-md-device" class="card-white text-center p-3 d-none">
-
+        <div id="question-for-md-device" class="card-white text-center p-3 mb-2 d-none">
+          <%= render 'question-form' %>
         </div>
         <%# Questions end here %>
 
       </div>
-      <div id="computer-dashboard" class="ms-5">
-        <h2 class="text-center p-4 mb-3">Computer's dashboard</h2>
-        <div id="computer-cards" class="parent-round-computer">
+      <div id="computer-dashboard" class="ms-5 d-none">
+        <h4 class="text-center p-2 mb-2">Computer's dashboard</h4>
+        <div id="computer-cards" class="parent__for_round-computer gameboard">
           <% @characters.each do |character| %>
-            <div class="box-computer">
+            <div class="box">
               <% if @game.computer_rejected_characters.include?(character.id) %>
                 <div class="text-center">
                   <div class="box-inner">
                     <div class="box-back">
-                      <div class="card-rounded-back-computer">
+                      <div class="card-rounded-back">
                         <i class="fa-regular fa-block-question"></i>
                       </div>
                     </div>
                   </div>
-                  <p><%= character.character_name  %></p>
                 </div>
+                <div class="slot-white__for_round"></div>
               <% else %>
                 <div class="text-center">
                   <div class="">
                     <div class="">
-                      <%= image_tag(character.image_url, class: "card-rounded-xxs", value: character.id, name: character.character_name, id: character.id) %>
+                      <%= image_tag(character.image_url, class: "card-rounded__for_round", value: character.id, name: character.character_name, id: character.id) %>
                     </div>
                   </div>
-                  <p><%= character.character_name  %></p>
                 </div>
+                <div class="slot-white__for_round"></div>
               <% end %>
             </div>
 
@@ -90,18 +90,19 @@
         </div>
         <div class="text-center p-3">
           <h4 class="mt-4">Computer's question</h4>
-          <div class="card-product">
+          <div class="card-product p-3">
+            <%= image_tag "mystery-block.gif", alt: "Mario mystery block" %>
             <div class="card-product-infos">
-              <h2>Previous question/answer</h2>
+              <h2>Computer's last question was:</h2>
               <% if @game.rounds.any? %>
                 <p>Question: <%= @game.rounds.last.computer_question.question.title %></p>
                 <% if @game.user_character.user_characteristics.include?(@game.rounds.last.computer_question.question.id) %>
-                  <p>Answer: this is true!</p>
+                  <p>Answer: This is true!</p>
                 <% else %>
-                  <p>Answer: sorry that's false!</p>
+                  <p>Answer: Sorry that's false.</p>
                 <% end %>
               <% else %>
-                <p>No question yet!</p>
+                <p>Waiting for computer's first question.</p>
               <% end %>
             </div>
           </div>

@@ -7,10 +7,9 @@ const displayBorder = (item) => {
   if (allInputs) {
     allInputs.forEach((card) => {
       card.addEventListener("click", (event) => {
-        console.log(card);
+
         // Variable if an other character is already selected
         const allCheckedCards = document.querySelectorAll('.border-gradient-green');
-        // const cardToCheck = card.querySelector('.card-checkbox');
 
         // Remove all other borders on other characters
         if (allCheckedCards) {
