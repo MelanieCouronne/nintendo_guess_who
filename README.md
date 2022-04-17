@@ -6,6 +6,7 @@ This game is responsive ⚡️, have a look on your phone 📱 or your tablet de
 
 ➡️ https://guesswho-game.herokuapp.com/
 
+
 ## Features reminder
 - Rails 6
 - HTML/CSS and Bootstrap
