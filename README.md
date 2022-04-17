@@ -4,9 +4,11 @@ The relational DB is managed with PostgreSQL and filled with seeds 🌱 of my ow
 
 This game is responsive ⚡️, have a look on your phone 📱 or your tablet device 👍🏻
 
-➡️ https://guesswho-game.herokuapp.com/
+> https://guesswho-game.herokuapp.com/
 
 
+
+```
 ## Features reminder
 - Rails 6
 - HTML/CSS and Bootstrap
@@ -16,3 +18,4 @@ This game is responsive ⚡️, have a look on your phone 📱 or your tablet de
 - Select2
 - Cloudinary
 - Heroku
+```
