@@ -8,8 +8,8 @@ This game is responsive ⚡️, have a look on your phone 📱 or your tablet de
 
 
 
-```
-## Features reminder
+```bash
+📌 Features reminder
 - Rails 6
 - HTML/CSS and Bootstrap
 - JavaScript
