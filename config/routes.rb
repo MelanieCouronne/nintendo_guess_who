@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :rounds, only: [:new, :create]
   end
 
-  resources :user, only: [:edit, :update] do
+  resources :users, only: [:edit, :update] do
     member do
       get 'profile'
     end
