@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to new_game_path, class: "nav-link" do %>
@@ -28,7 +28,7 @@
                 <i class="fa-solid fa-trophy"></i>
                 <span>Score</span>
               <% end %>
-              <%= link_to users_profile_path, class: "dropdown-item" do %>
+              <%= link_to profile_user_path(current_user), class: "dropdown-item" do %>
                 <i class="fa-regular fa-user"></i>
                 <span>Profile</span>
               <% end %>
