@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
 
-    redirect_to user_profile_path(@user)
+    redirect_to profile_user_path(@user)
   end
 
   private
