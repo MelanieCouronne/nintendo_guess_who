@@ -2,21 +2,21 @@
   <div class="row mt-5">
     <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3">
       <%= simple_form_for @user, url: user_registration_path do |f| %>
-        <div class="mb-2" data-controller="display-email-in-profile">
-
-          <div class="d-flex align-items-center">
+        <div class="white-background mb-2" data-controller="display-email-in-profile">
+          <div class="profile-infos">
             <% if current_user.photo.attached? %>
-              <%= cl_image_tag(current_user.photo.key, class: "avatar-profile-page") %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-profile-page" %>
             <% else %>
-              <%= image_tag 'user-avatar.png', class: "avatar-profile-page" %>
+              <i class="fa-regular fa-circle-user"></i>
             <% end %>
-            <div class="ms-5">
-              <h2 class="mb-4" data-display-email-in-profile-target="spanEmail"><%= @user.email  %></h2>
-              <div class="d-flex">
+            <div class="">
+              <h3 class="my-4" data-display-email-in-profile-target="spanEmail"><%= @user.email  %></h3>
+              <div class="">
                 <%= f.input :photo, as: :file, label: false, class:"btn btn-outline-dark" %>
               </div>
             </div>
           </div>
+
 
           <div class="mt-5">
             <h4 class="text-left">Informations</h4>
