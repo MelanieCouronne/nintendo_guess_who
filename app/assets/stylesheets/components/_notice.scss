@@ -1,13 +1,21 @@
 .red-notice {
   display: flex;
+  height: 55px;
   align-content: center;
   justify-content: space-between;
   background-color: #19d47d94;
   border: $green-guesswho 0.7px solid;
   border-radius: 8px;
-  color: #055f35;
-  padding: 10px 15px;
+  color: #057340;
+  padding: 12px 18px;
   margin-bottom: 40px;
+
+  &:hover {
+    i {
+      // display: inline-block;
+      animation: fade-out 200ms both;
+    }
+  }
 
   p {
     margin: 0;
@@ -15,10 +23,13 @@
   }
 
   i {
-    line-height: 1.5;
-    border: #055f355e 1px solid;
+    // display: none;
+    // visibility: hidden;
+    line-height: 1;
+    text-align: center;
+    border: #055f355e 0.8px solid;
     border-radius: 6px;
-    padding: 2px 6px;
+    padding: 6px 8px;
     cursor: pointer;
   }
 }
