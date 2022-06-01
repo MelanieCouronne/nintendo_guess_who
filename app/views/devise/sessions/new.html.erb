@@ -9,10 +9,19 @@
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
+          <div>
+            <i class="fa-solid fa-caret-right"></i>
+            <p>To run the test, copy the information below in the form</p>
+          </div>
+          <div class="red-notice">
+            <p>melanie@gmail.com</p>
+            <i class="fa-regular fa-clone"></i>
+          </div>
           <%= f.input :password,
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <p>test-azerty</p>
         </div>
 
         <div class="form-actions">
