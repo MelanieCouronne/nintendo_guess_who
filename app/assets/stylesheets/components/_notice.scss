@@ -10,13 +10,6 @@
   padding: 12px 18px;
   margin: 0 1px 40px 1px;
 
-  &:hover {
-    .fa-regular.fa-clone {
-      visibility: visible;
-      animation: fade-out 200ms both;
-    }
-  }
-
   p {
     margin: 0;
     align-self: center;
@@ -29,7 +22,6 @@
   }
 
   .fa-regular.fa-clone {
-    visibility: hidden;
     cursor: pointer;
   }
 

@@ -3,7 +3,9 @@
   background-color: white;
   border-radius: 10px;
   padding: 35px;
+  margin-top: 120px;
 }
+
 
 .profile-infos {
   position: relative;
@@ -31,13 +33,27 @@
   }
 
   .fa-regular.fa-circle-user {
-    font-size: 170px;
     color: lightgray;
+  }
+
+  .fa-regular.fa-circle-user,
+  .fa-solid.fa-trophy {
+    font-size: 170px;
   }
 }
 
 .profile-contents {
-  margin: 40px 0;
+  margin: 40px 0 0 0;
+
+  h5 {
+    font-weight: normal;
+    margin: 0 0 40px 0;
+  }
+
+  p {
+    font-weight: lighter;
+    text-align: justify;
+  }
 }
 
 .contents-title {
@@ -45,11 +61,6 @@
   align-content: center;
   justify-content: flex-start;
   margin: 10px 0;
-
-  h4 {
-    font-weight: normal;
-    margin: 0 0 30px 0;
-  }
 
   h5 {
     font-weight: lighter;
