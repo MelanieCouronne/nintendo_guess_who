@@ -1,10 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3">
+    <div class="col-12 col-sm-8 col-md-8 offset-sm-2 offset-md-2">
       <div class="white-background">
         <div class="profile-infos">
           <%#= link_to edit_user_path(@user) do %>
-            <i class="fa-solid fa-pen"></i>
+          <i id="penEditIcon" aria-describedby="tooltip" class="fa-solid fa-pen"></i>
+          <div id="tooltipPen" role="tooltip">That's not possible, 'cause it's not your profile!
+            <div id="arrowPen" data-popper-arrow></div>
+          </div>
           <%# end %>
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar-profile-page" %>
