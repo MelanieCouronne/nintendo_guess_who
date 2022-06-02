@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :rounds, only: [:new, :create]
   end
 
-  resources :users, only: [:edit, :update] do
+  resources :users, only: [] do
     member do
       get 'profile'
     end
