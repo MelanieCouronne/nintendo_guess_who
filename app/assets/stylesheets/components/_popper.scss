@@ -1,0 +1,57 @@
+#tooltipEmail,
+#tooltipPassword {
+  background: rgba(255, 255, 255, 0.882);
+  color: #17b66c;
+  font-weight: normal;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  display: none;
+}
+
+#tooltipEmail[data-show],
+#tooltipPassword[data-show] {
+  display: block;
+}
+
+#arrowEmail,
+#arrowEmail::before,
+#arrowPassword,
+#arrowPassword::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrowEmail,
+#arrowPassword {
+  visibility: hidden;
+}
+
+#arrowEmail::before,
+#arrowPassword::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+#tooltipEmail[data-popper-placement^='top']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='top']>#arrowPassword {
+  bottom: -4px;
+}
+
+#tooltipEmail[data-popper-placement^='bottom']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='bottom']>#arrowPassword {
+  top: -4px;
+}
+
+#tooltipEmail[data-popper-placement^='left']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='left']>#arrowPassword {
+  right: -4px;
+}
+
+#tooltipEmail[data-popper-placement^='right']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='right']>#arrowPassword {
+  left: -4px;
+}

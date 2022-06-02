@@ -3,15 +3,40 @@
     <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
       <h2>Log in</h2>
 
+      <div class="text-notice">
+        <i class="pulse-green fa-regular fa-lightbulb"></i>
+        <h5>To run the test, copy the information below in the form</h5>
+      </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
+        <div class="form-inputs" data-controller="copy-to-clipboard">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
-                      input_html: { autocomplete: "email" } %>
+                      input_html: { autocomplete: "email", "data-copy-to-clipboard-target":"toPasteEmail" } %>
+          <div class="green-notice" >
+            <% user = User.find(1) %>
+            <div class="d-flex">
+              <i class="fa-solid fa-caret-right"></i>
+              <p data-copy-to-clipboard-target="toCopyEmail"><%= user.email %></p>
+            </div>
+            <i id="cloneIconForEmail" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyEmail click->copy-to-clipboard#changeIcon"></i>
+            <div id="tooltipEmail" role="tooltip">Copy/Paste!
+              <div id="arrowEmail" data-popper-arrow></div>
+            </div>
+          </div>
           <%= f.input :password,
                       required: false,
-                      input_html: { autocomplete: "current-password" } %>
+                      input_html: { autocomplete: "current-password", "data-copy-to-clipboard-target":"toPastePassword" } %>
+          <div class="green-notice" >
+            <div class="d-flex">
+              <i class="fa-solid fa-caret-right"></i>
+              <p data-copy-to-clipboard-target="toCopyPassword">Have fun!</p>
+            </div>
+            <i id="cloneIconForPassword" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyPassword click->copy-to-clipboard#changeIcon"></i>
+            <div id="tooltipPassword" role="tooltip">Copy/Paste!
+              <div id="arrowPassword" data-popper-arrow></div>
+            </div>
+          </div>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 

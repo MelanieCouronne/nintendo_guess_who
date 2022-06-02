@@ -29,6 +29,10 @@ const context = require.context("controllers", true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
 
 
+// Popper import from plugins
+import { popper } from '../plugins/popper';
+
+
 // Internal imports, e.g:
 import { selectedCharacter } from '../plugins/selected_character';
 import { displayQuestions } from "../plugins/display_questions";
