@@ -13,7 +13,7 @@ puts "\u{1F331}"
 
 #--------------<><><> user - admin <><><>--------------
 admin = [
-  { email: "janedoe@guesswho.com", password: "Have fun!"}, #id=1
+  { email: "melanie@guesswho.com", password: "Have fun!"}, #id=1
 ]
 
 puts' '
