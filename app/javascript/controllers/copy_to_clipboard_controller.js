@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["toPasteEmail", "toCopyEmail",]
+  static targets = ["toPasteEmail", "toCopyEmail", "toPastePassword", "toCopyPassword"]
 
   connect() {
     // console.log("Hello from clipboard");
@@ -13,7 +13,13 @@ export default class extends Controller {
     const email = this.toCopyEmailTarget.innerText;
     let emailInput = this.toPasteEmailTarget;
     emailInput.value = email;
-  }
+  };
+
+  copyPassword() {
+    const password = this.toCopyPasswordTarget.innerText;
+    let passwordInput = this.toPastePasswordTarget;
+    passwordInput.value = password;
+  };
 
   changeIcon(event) {
     const targetToToggle = event.target

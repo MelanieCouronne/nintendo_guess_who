@@ -18,7 +18,6 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
-
 // Stimulus import
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"

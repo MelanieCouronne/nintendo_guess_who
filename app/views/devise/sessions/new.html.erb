@@ -23,9 +23,16 @@
           </div>
           <%= f.input :password,
                       required: false,
-                      input_html: { autocomplete: "current-password" } %>
+                      input_html: { autocomplete: "current-password", "data-copy-to-clipboard-target":"toPastePassword" } %>
+          <div class="red-notice" >
+            <% user = User.find(1) %>
+            <p data-copy-to-clipboard-target="toCopyPassword">Have fun!</p>
+            <i id="copy" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyPassword click->copy-to-clipboard#changeIcon"></i>
+            <div id="tooltip" role="tooltip">Copy!
+              <div id="arrow" data-popper-arrow></div>
+            </div>
+          </div>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          <p>test-azerty</p>
         </div>
 
         <div class="form-actions">
