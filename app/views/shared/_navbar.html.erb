@@ -24,7 +24,7 @@
               <%= image_tag "user-avatar.png", class: "avatar-squared dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "#", class: "dropdown-item" do %>
+              <%= link_to score_user_path(current_user), class: "dropdown-item" do %>
                 <i class="fa-solid fa-trophy"></i>
                 <span>Score</span>
               <% end %>

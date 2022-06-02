@@ -20,15 +20,17 @@
             <i class="fa-regular fa-address-card"></i>
             <h5 class="text-left">Informations</h5>
           </div>
-          <div class="contents-title">
-            <h4><%= @user.email %></h4>
-          </div>
-          <div class="contents-title">
-            <i class="fa-solid fa-trophy"></i>
-            <h5 class="text-left">Score</h5>
-          </div>
           <div class="">
-            <p class=""></p>
+            <h4><%= @user.email %></h4>
+            <% if current_user.id == 1 %>
+              <p>Hi! 👋 </p>
+              <p>I'm Mélanie! After 20 years as a Stadium Manager and Event Manager in Bordeaux, Paris and
+              Lille, I'm finally starting a new career challenge in web development!</p>
+              <p>I'm trained in Ruby & Ruby on Rails, JS, HTML/CSS, Git, GitHub, PostgreSQL, Heroku thanks
+              to Le Wagon Bordeaux.</p>
+              <p>My goal is to learn as much as possible about TDD, React, and no-code...</p>
+              <p>I'm passionate and I like to learn!</p>
+            <% end %>
           </div>
         </div>
       </div>

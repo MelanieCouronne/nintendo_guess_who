@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:profile, :score]
 
   def profile
+  end
+
+  def score
   end
 
   #*** Not needed for now
