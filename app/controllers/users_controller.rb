@@ -4,14 +4,16 @@ class UsersController < ApplicationController
   def profile
   end
 
-  def edit
-  end
+  #*** Not needed for now
 
-  def update
-    @user.update(user_params)
+  # def edit
+  # end
 
-    redirect_to profile_user_path(@user)
-  end
+  # def update
+  #   @user.update(user_params)
+
+  #   redirect_to profile_user_path(@user)
+  # end
 
   private
 
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def user_params
-    params.require(:user).permit(:email, :photo)
-  end
+  # def user_params
+  #   params.require(:user).permit(:email, :photo)
+  # end
 end
