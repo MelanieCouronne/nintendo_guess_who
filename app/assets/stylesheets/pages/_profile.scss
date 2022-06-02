@@ -32,9 +32,17 @@
     }
   }
 
+  .fa-solid.fa-trophy {
+    color: rgb(243, 204, 10);
+  }
+
   .fa-regular.fa-circle-user {
-    font-size: 170px;
     color: lightgray;
+  }
+
+  .fa-regular.fa-circle-user,
+  .fa-solid.fa-trophy {
+    font-size: 170px;
   }
 }
 
