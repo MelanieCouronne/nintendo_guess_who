@@ -1,4 +1,5 @@
-#tooltip {
+#tooltipEmail,
+#tooltipPassword {
   background: rgba(255, 255, 255, 0.882);
   color: #17b66c;
   font-weight: normal;
@@ -8,40 +9,49 @@
   display: none;
 }
 
-#tooltip[data-show] {
+#tooltipEmail[data-show],
+#tooltipPassword[data-show] {
   display: block;
 }
 
-#arrow,
-#arrow::before {
+#arrowEmail,
+#arrowEmail::before,
+#arrowPassword,
+#arrowPassword::before {
   position: absolute;
   width: 8px;
   height: 8px;
   background: inherit;
 }
 
-#arrow {
+#arrowEmail,
+#arrowPassword {
   visibility: hidden;
 }
 
-#arrow::before {
+#arrowEmail::before,
+#arrowPassword::before {
   visibility: visible;
   content: '';
   transform: rotate(45deg);
 }
 
-#tooltip[data-popper-placement^='top']>#arrow {
+#tooltipEmail[data-popper-placement^='top']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='top']>#arrowPassword {
   bottom: -4px;
 }
 
-#tooltip[data-popper-placement^='bottom']>#arrow {
+#tooltipEmail[data-popper-placement^='bottom']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='bottom']>#arrowPassword {
   top: -4px;
 }
 
-#tooltip[data-popper-placement^='left']>#arrow {
+#tooltipEmail[data-popper-placement^='left']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='left']>#arrowPassword {
   right: -4px;
 }
 
-#tooltip[data-popper-placement^='right']>#arrow {
+#tooltipEmail[data-popper-placement^='right']>#arrowEmail,
+#tooltipPassword[data-popper-placement^='right']>#arrowPassword {
   left: -4px;
 }

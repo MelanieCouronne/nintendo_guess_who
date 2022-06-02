@@ -16,9 +16,9 @@
           <div class="red-notice" >
             <% user = User.find(1) %>
             <p data-copy-to-clipboard-target="toCopyEmail"><%= user.email %></p>
-            <i id="copy" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyEmail click->copy-to-clipboard#changeIcon"></i>
-            <div id="tooltip" role="tooltip">Copy!
-              <div id="arrow" data-popper-arrow></div>
+            <i id="cloneIconForEmail" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyEmail click->copy-to-clipboard#changeIcon"></i>
+            <div id="tooltipEmail" role="tooltip">Copy!
+              <div id="arrowEmail" data-popper-arrow></div>
             </div>
           </div>
           <%= f.input :password,
@@ -27,9 +27,9 @@
           <div class="red-notice" >
             <% user = User.find(1) %>
             <p data-copy-to-clipboard-target="toCopyPassword">Have fun!</p>
-            <i id="copy" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyPassword click->copy-to-clipboard#changeIcon"></i>
-            <div id="tooltip" role="tooltip">Copy!
-              <div id="arrow" data-popper-arrow></div>
+            <i id="cloneIconForPassword" aria-describedby="tooltip" class="fa-regular fa-clone" data-action="click->copy-to-clipboard#copyPassword click->copy-to-clipboard#changeIcon"></i>
+            <div id="tooltipPassword" role="tooltip">Copy!
+              <div id="arrowPassword" data-popper-arrow></div>
             </div>
           </div>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
