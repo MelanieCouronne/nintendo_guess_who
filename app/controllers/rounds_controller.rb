@@ -37,15 +37,11 @@ class RoundsController < ApplicationController
     #   => Characters who don't have it are rejected and stocked in a array
     user_rejected_characters = []
     if @game.computer_character.computer_characteristics.include?(characteristic_id)
-      user_rejected_characters << @characters.reject do |character|
-        characters_with_characteristic.include?(character.id)
-      end
-    # If the computer character's choice does not have the questions's characteristic:
-    #   => Characters who have it are rejected and stocked in a array
+      user_rejected_characters = rejected_characters_from(characters_with_characteristic)
     else
-      user_rejected_characters << @characters.select do |character|
-        characters_with_characteristic.include?(character.id)
-      end
+      # If the computer character's choice does not have the questions's characteristic:
+      #   => Characters who have it are rejected and stocked in a array
+      user_rejected_characters = selected_characters_from(characters_with_characteristic)
     end
 
     user_rejected_characters.flatten.each do |character|
@@ -53,8 +49,8 @@ class RoundsController < ApplicationController
         @game.user_rejected_characters << character.id
       end
     end
-    puts "######## 1 - User characters rejetés => #{@game.user_rejected_characters.sort}"
-    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character_id}"
+    # puts "######## 1 - User characters rejetés => #{@game.user_rejected_characters.sort}"
+    # puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character_id}"
 
 
     #* Handle question/answer for computer
@@ -67,8 +63,8 @@ class RoundsController < ApplicationController
     end
     computer_question = ComputerQuestion.create!(question_id: computer_question_choice)
     @round.computer_question_id = computer_question.id
-    puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
-    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character_id}"
+    # puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
+    # puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character_id}"
 
 
     #* Handle characteristics selection
@@ -79,13 +75,9 @@ class RoundsController < ApplicationController
 
     computer_rejected_characters = []
     if @game.user_character.user_characteristics.include?(computer_characteristic_id)
-      computer_rejected_characters << @characters.reject do |character|
-        characters_with_characteristic.include?(character.id)
-      end
+      computer_rejected_characters = rejected_characters_from(characters_with_characteristic)
     else
-      computer_rejected_characters << @characters.select do |character|
-        characters_with_characteristic.include?(character.id)
-      end
+      computer_rejected_characters = selected_characters_from(characters_with_characteristic)
     end
 
     computer_rejected_characters.flatten.each do |character|
@@ -93,7 +85,7 @@ class RoundsController < ApplicationController
         @game.computer_rejected_characters << character.id
       end
     end
-    puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
+    # puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
 
     if @round.save
       @game.round_count += 1
@@ -121,6 +113,18 @@ class RoundsController < ApplicationController
 
   def find_question(id)
     Question.find(id)
+  end
+
+  def selected_characters_from(array_of_characters)
+    @characters.select do |character|
+      array_of_characters.include?(character.id)
+    end
+  end
+
+  def rejected_characters_from(array_of_characters)
+    @characters.reject do |character|
+      array_of_characters.include?(character.id)
+    end
   end
 
   def gather_characters_who_have_the_characteristic(characteristic)
