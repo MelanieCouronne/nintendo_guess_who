@@ -24,30 +24,32 @@ class RoundsController < ApplicationController
     @round.game = @game
 
     #* Handle question id for user
-    @user_question_id = params[:round][:user_question].to_i
-    @user_question = UserQuestion.create!(question_id: @user_question_id)
-    @round.user_question = @user_question
+    user_question_choice = params[:round][:user_question].to_i
+    user_question = UserQuestion.create!(question_id: user_question_choice)
+    @round.user_question = user_question
 
     #* Handle characteristics selection
-    @question = Question.find(@user_question_id)
-    characteristic_id = @question.characteristic_id
+    question = Question.find(user_question_choice)
+    characteristic_id = question.characteristic_id
 
     #* => if the character include the characteristic id of the question
     #*   => add the characteristic in a variable
-    selected_characters = []
+    characters_who_have_the_characteristic = []
 
     CharacterProfile.all.each do |cp|
-      selected_characters << cp.character_id if cp.characteristic_id == characteristic_id
+      characters_who_have_the_characteristic << cp.character_id if cp.characteristic_id == characteristic_id
     end
 
     user_rejected_characters = []
+    # Si le personnage de l'ordinateur a la charactéristique de la question alors
+    # => les cartes qui n'ont pas cette charactéristique sont rejetées dans la variable
     if @game.computer_character.computer_characteristics.include?(characteristic_id)
       user_rejected_characters << @characters.reject do |character|
-        selected_characters.include?(character.id)
+        characters_who_have_the_characteristic.include?(character.id)
       end
-    else
+    else # Si le personnage de l'ordinateur n'a pas la charactéristique de la question alors je rejete toute les cartes qui ont la charactéristique
       user_rejected_characters << @characters.select do |character|
-        selected_characters.include?(character.id)
+        characters_who_have_the_characteristic.include?(character.id)
       end
     end
 
@@ -57,43 +59,43 @@ class RoundsController < ApplicationController
       end
     end
     puts "######## 1 - User characters rejetés => #{@game.user_rejected_characters.sort}"
-    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character.id}"
+    puts "################ 1 - User character => name: #{@game.user_character.character.character_name.capitalize} | id: #{@game.user_character.character_id}"
 
 
     #* Handle question/answer for computer
     if @game.round_count == 0
-      @computer_question_id = ComputerQuestion.first_question
+      computer_question_choice = ComputerQuestion.first_question
     elsif @game.round_count == 1
-      @computer_question_id = ComputerQuestion.second_question
+      computer_question_choice = ComputerQuestion.second_question
     else
-      @computer_question_id = ComputerQuestion.set_up_question
+      computer_question_choice = ComputerQuestion.set_up_question
     end
-    @computer_question = ComputerQuestion.create!(question_id: @computer_question_id)
-    @round.computer_question_id = @computer_question.id
+    computer_question = ComputerQuestion.create!(question_id: computer_question_choice)
+    @round.computer_question_id = computer_question.id
     puts "######## 2 - Computer characters rejetés => #{@game.computer_rejected_characters.sort}"
-    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character.id}"
+    puts "################ 2 - Computer character => name: #{@game.computer_character.character.character_name.capitalize} | id: #{@game.computer_character.character_id}"
 
 
     #* Handle characteristics selection
-    @computer_question_characteristic = Question.find(@computer_question_id)
-    characteristic_id = @computer_question_characteristic.characteristic_id
+    computer_question_characteristic = Question.find(computer_question_choice)
+    computer_characteristic_id = computer_question_characteristic.characteristic_id
 
     #* => if the character include the characteristic id of the question
     #*   => add the characteristic in a variable
-    selected_characters = []
+    selected_characters_for_computer = []
 
     CharacterProfile.all.each do |cp|
-      selected_characters << cp.character_id if cp.characteristic_id == characteristic_id
+      selected_characters_for_computer << cp.character_id if cp.characteristic_id == computer_characteristic_id
     end
 
     computer_rejected_characters = []
-    if @game.user_character.user_characteristics.include?(characteristic_id)
+    if @game.user_character.user_characteristics.include?(computer_characteristic_id)
       computer_rejected_characters << @characters.reject do |character|
-        selected_characters.include?(character.id)
+        selected_characters_for_computer.include?(character.id)
       end
     else
       computer_rejected_characters << @characters.select do |character|
-        selected_characters.include?(character.id)
+        selected_characters_for_computer.include?(character.id)
       end
     end
 
