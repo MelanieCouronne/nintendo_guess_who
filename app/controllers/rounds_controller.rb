@@ -1,10 +1,6 @@
 class RoundsController < ApplicationController
   before_action :set_game, only: [:new, :create]
 
-  def index
-    @rounds = Round.all
-  end
-
   def new
     # Initialize instances and gather all characters
     @round = Round.new
@@ -22,7 +18,7 @@ class RoundsController < ApplicationController
     @round.game = @game
 
 
-    # USER PART
+    # USER PART ----------------------------------------------
     # Handle question id for user
     user_question_choice = params[:round][:user_question].to_i
     user_question = UserQuestion.create!(question_id: user_question_choice)
@@ -51,7 +47,7 @@ class RoundsController < ApplicationController
     end
 
 
-    # COMPUTER PART
+    # COMPUTER PART ----------------------------------------------
     # Handle question/answer for computer
     computer_question_choice = random_question_for_computer(@game.round_count)
     computer_question = ComputerQuestion.create!(question_id: computer_question_choice)
@@ -83,7 +79,6 @@ class RoundsController < ApplicationController
       else
         redirect_to(new_game_round_path(@game))
       end
-
     else
       if @round.errors.any?
         @round.errors.full_messages.each do |message|
@@ -138,5 +133,4 @@ class RoundsController < ApplicationController
   def round_params
     params.require(:round).permit(:user_question, :character_id)
   end
-
 end
