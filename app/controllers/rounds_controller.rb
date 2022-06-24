@@ -21,6 +21,8 @@ class RoundsController < ApplicationController
     # Handle game id
     @round.game = @game
 
+
+    # USER PART
     # Handle question id for user
     user_question_choice = params[:round][:user_question].to_i
     user_question = UserQuestion.create!(question_id: user_question_choice)
@@ -43,17 +45,17 @@ class RoundsController < ApplicationController
       user_rejected_characters = selected_characters_from(characters_with_characteristic)
     end
 
+    # Added rejected characters to DB for percistent data through rounds
     user_rejected_characters.flatten.each do |character|
-      if @game.user_rejected_characters.exclude?(character.id)
-        @game.user_rejected_characters << character.id
-      end
+      @game.user_rejected_characters << character.id if @game.user_rejected_characters.exclude?(character.id)
     end
 
+
+    # COMPUTER PART
     # Handle question/answer for computer
     computer_question_choice = random_question_for_computer(@game.round_count)
     computer_question = ComputerQuestion.create!(question_id: computer_question_choice)
     @round.computer_question_id = computer_question.id
-
 
     # Handle characteristics selection
     computer_question_characteristic = find_question(computer_question_choice)
@@ -68,9 +70,7 @@ class RoundsController < ApplicationController
     end
 
     computer_rejected_characters.flatten.each do |character|
-      if @game.computer_rejected_characters.exclude?(character.id)
-        @game.computer_rejected_characters << character.id
-      end
+      @game.computer_rejected_characters << character.id if @game.computer_rejected_characters.exclude?(character.id)
     end
 
     # Save the round
