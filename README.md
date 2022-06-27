@@ -1,3 +1,5 @@
+# Guess Who game
+
 This web app is build with Rails 6, CSS/HTML and JS.
 
 The relational DB is managed with PostgreSQL and filled with seeds 🌱 of my own.
